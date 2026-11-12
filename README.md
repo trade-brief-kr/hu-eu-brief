@@ -12,6 +12,7 @@
 |---|---|
 | 일일 브리핑 | 정치 및 정부 / 경제 및 산업(기업동향·한국기업) / EU 경제통상 이슈 / EU 통계발표. 날짜 이전/다음, 텍스트 복사 |
 | 주간 브리핑 | 매주 월요일, 지난주 월~일. 일일과 같은 4개 섹션. 주 단위 이전/다음 |
+| 헝가리 주요 통계 | 성장·물가·고용·금리·환율·재정·기본지표·한국–헝가리 교역. 공식 API(Eurostat, BIS, ECB, World Bank, UN Comtrade) 월 1회 자동 수집 (`tools/fetch_stats.py`) |
 | 지난 브리핑 검색 | 일일·주간 기사 제목 키워드 검색, 날짜별 목록 |
 
 단순 HTML/CSS/JS(빌드·CDN 없음). `file://`로 열어도 `data/*.js` 대체본으로 동작.
@@ -22,6 +23,7 @@ data/report.json(.js)          최신 일일본
 data/archive/                  일일 보관본 YYYY-MM-DD.json/.js, index.json/.js
 data/weekly.json(.js)          최신 주간본
 data/weekly/                   주간 보관본 <weekStart>.json/.js, index.json/.js
+data/stats.json(.js)           헝가리 주요 통계 (tools/fetch_stats.py, 월 1회)
 feed.xml                       RSS (일일+주간)
 tools/research_prompt.md       조사 규칙 (Codex 프롬프트에 그대로 포함)
 tools/run_codex_research.sh    Codex CLI 조사 러너 (일일 기본, --weekly 주간)

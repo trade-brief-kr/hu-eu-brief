@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   var $ = function (id) { return document.getElementById(id); };
-  var tabs = ['daily', 'weekly', 'search'], active = 'daily', hits = [], flashTimer;
+  var tabs = ['daily', 'weekly', 'stats', 'search'], active = 'daily', hits = [], flashTimer;
   var names = {
     hu_politics: '정치 및 정부', hu_economy: '경제 및 산업',
     eu_policy: 'EU 경제통상 이슈', eu_stats: 'EU 통계발표'
@@ -29,6 +29,9 @@
   function sectionTitle(s) { return names[s.id] || s.title || s.id; }
   function bucket() { return { latest: null, report: null, index: [], cache: {}, ready: false, token: 0, request: '', error: '' }; }
   var state = { daily: bucket(), weekly: bucket() };
+  var statsData = null;
+  var STATS_GROUPS = ['growth', 'prices', 'labour', 'finance', 'fiscal', 'basic', 'trade'];
+  var STATS_NAMES = ['성장·생산', '물가', '고용', '금리·환율', '재정', '기본 지표', '한국–헝가리 교역'];
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
@@ -103,6 +106,97 @@
     }
     updateNav(kind); updateChrome();
   }
+  function statsPeriod(value) {
+    var s = String(value == null ? '' : value), m;
+    if ((m = /^(\d{4})-Q([1-4])$/.exec(s))) return m[1] + '년 ' + m[2] + '분기';
+    if ((m = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(s))) return m[1] + '년 ' + Number(m[2]) + '월';
+    if (/^\d{4}$/.test(s)) return s + '년';
+    if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return s.replace(/-/g, '.') + '.';
+    return s;
+  }
+  function statsDate(value) {
+    var m = /^(\d{4}-\d{2}-\d{2})(?:T|$)/.exec(String(value || ''));
+    return m ? statsPeriod(m[1]) : '-';
+  }
+  function statsTime(value) {
+    if (!value) return '-';
+    var d = new Date(value);
+    if (isNaN(d.getTime())) return '-';
+    return new Date(d.getTime() + 9 * 3600000).toISOString().slice(0, 16).replace(/-/g, '.').replace('T', ' ') + ' KST';
+  }
+  function statsNumber(value) { return typeof value === 'number' && isFinite(value); }
+  function statsDecimals(it) { return Number.isInteger(it.decimals) ? Math.max(0, Math.min(20, it.decimals)) : 0; }
+  function statsValue(value, it, unit) {
+    if (!statsNumber(value)) return '-';
+    var digits = statsDecimals(it);
+    return value.toLocaleString('ko-KR', { minimumFractionDigits: digits, maximumFractionDigits: digits }) +
+      (unit ? (unit === '%' || unit === '%p' ? '' : ' ') + unit : '');
+  }
+  function sparkline(it) {
+    var series = (Array.isArray(it.series) ? it.series : []).filter(function (p) {
+      return Array.isArray(p) && statsNumber(p[1]);
+    });
+    if (!series.length) return '';
+    var values = series.map(function (p) { return p[1]; });
+    var min = Math.min.apply(null, values), max = Math.max.apply(null, values);
+    var points = series.map(function (p, i) {
+      var x = series.length === 1 ? 60 : 4 + i * 112 / (series.length - 1);
+      var y = max === min ? 16 : 28 - (p[1] - min) * 24 / (max - min);
+      return [x.toFixed(2), y.toFixed(2)];
+    });
+    var last = points[points.length - 1];
+    var caption = it.label + ' 추이' + (it.seriesNote ? ' (' + it.seriesNote + ')' : '');
+    var tooltip = caption + ': ' + series.map(function (p) { return statsPeriod(p[0]) + ' ' + statsValue(p[1], it, it.unit); }).join(' → ');
+    return '<svg class="stats-sparkline" viewBox="0 0 120 32" width="120" height="32" role="img" aria-label="' + esc(tooltip) + '">' +
+      '<title>' + esc(tooltip) + '</title><polyline points="' + points.map(function (p) { return p.join(','); }).join(' ') +
+      '" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>' +
+      '<circle cx="' + last[0] + '" cy="' + last[1] + '" r="2.5" fill="currentColor"/></svg>';
+  }
+  function indicatorHtml(it) {
+    var h = '<article class="stats-indicator"><h3>' + esc(it.label) +
+      (it.stale === true ? '<span class="stats-stale">이전 값 유지</span>' : '') + '</h3>';
+    h += '<p class="stats-value">' + esc(statsValue(it.value, it, '')) + '<span class="stats-unit">' + esc(it.unit) + '</span></p>';
+    h += '<p class="stats-period">' + esc(statsPeriod(it.period)) + '</p><p class="stats-previous">';
+    if (statsNumber(it.prevValue)) {
+      h += '직전 ' + esc(statsValue(it.prevValue, it, it.unit)) + ' (' + esc(statsPeriod(it.prevPeriod)) + ')';
+      if (statsNumber(it.value)) {
+        var diff = Number((it.value - it.prevValue).toFixed(statsDecimals(it)));
+        var arrow = diff > 0 ? '▲' : diff < 0 ? '▼' : '–';
+        h += ' <span class="stats-change" aria-label="' + (diff > 0 ? '상승 ' : diff < 0 ? '하락 ' : '변동 없음 ') +
+          esc(statsValue(Math.abs(diff), it, it.unit === '%' ? '%p' : it.unit)) + '">' + arrow + ' ' +
+          esc(statsValue(Math.abs(diff), it, it.unit === '%' ? '%p' : it.unit)) + '</span>';
+      }
+    } else h += '직전 값 없음';
+    h += '</p>' + sparkline(it);
+    if (it.seriesNote) h += '<p class="stats-note">추이: ' + esc(it.seriesNote) + '</p>';
+    if (it.note) h += '<p class="stats-note">' + esc(it.note) + '</p>';
+    var url = safeUrl(it.sourceUrl), source = esc(it.source || '-');
+    h += '<footer class="stats-source">출처: ' + (url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + source + '</a>' : source) +
+      ' · 원자료 갱신 ' + esc(statsDate(it.sourceUpdated)) + '<br>수집 ' + esc(statsDate(it.fetchedAt)) + '</footer>';
+    return h + '</article>';
+  }
+  function renderStats() {
+    var h = '', indicators = statsData ? statsData.indicators.filter(function (it) { return it && typeof it === 'object'; }) : [];
+    STATS_GROUPS.forEach(function (group, n) {
+      var items = indicators.filter(function (it) { return it.group === group; });
+      if (!items.length) return;
+      h += '<section class="card sec"><h2>' + esc((statsData.groups || {})[group] || STATS_NAMES[n]) +
+        '</h2><div class="stats-grid">' + items.map(indicatorHtml).join('') + '</div></section>';
+    });
+    if (!h) h = '<div class="card"><p class="empty">통계를 불러오지 못했습니다</p></div>';
+    if (statsData) {
+      h += '<p class="muted stats-disclaimer">수치는 Eurostat·BIS·ECB·World Bank·UN Comtrade 공개 API에서 자동 수집한 값입니다. 기관별로 공표 시차가 있으며, 인용 시 원문을 확인하세요.</p>';
+      if (Array.isArray(statsData.errors) && statsData.errors.length) h += '<ul class="stats-errors muted">' + statsData.errors.filter(function (e) { return e; }).map(function (e) {
+        return '<li>일부 지표 갱신 실패: ' + esc(e.task) + ' (' + esc(statsTime(e.at)) + ')' + (e.error ? ' · ' + esc(e.error) : '') + '</li>';
+      }).join('') + '</ul>';
+    }
+    $('stats').innerHTML = h; $('stats').setAttribute('aria-busy', 'false'); updateChrome();
+  }
+  function initStats() {
+    return read('data/stats', function () { return window.STATS_DATA; }).catch(function () { return null; }).then(function (data) {
+      statsData = data && Array.isArray(data.indicators) ? data : null; renderStats();
+    });
+  }
   function updateNav(kind) {
     var c = state[kind], week = kind === 'weekly', sel = $(week ? 'archive-week' : 'archive-date');
     var current = key(kind, c.report), idx = c.index.slice();
@@ -118,14 +212,14 @@
     $(week ? 'next-week' : 'next-day').disabled = !!c.request || pos <= 0;
   }
   function updateChrome() {
-    var search = active === 'search', c = search ? null : state[active], r = c && c.report;
-    $('controls').hidden = search;
+    var search = active === 'search', stats = active === 'stats', c = state[active], r = c && c.report;
+    $('controls').hidden = search || stats;
     $('daily-nav').hidden = active !== 'daily'; $('weekly-nav').hidden = active !== 'weekly';
-    $('copy').hidden = search; $('copy').disabled = !r || !!(c && c.request);
-    $('report-title').textContent = search ? '지난 브리핑 검색' : r ? title(active, r) : active === 'weekly' ? '헝가리 주요이슈 브리핑' : '헝가리·EU 일일 브리핑';
-    $('updated').textContent = search ? '일일·주간 브리핑 아카이브' : r ? '확인시각 ' + hm(r.generatedAt) + ' KST｜' + r.coverage : '';
+    $('copy').hidden = search || stats; $('copy').disabled = !r || !!(c && c.request);
+    $('report-title').textContent = stats ? '헝가리 주요 통계' : search ? '지난 브리핑 검색' : r ? title(active, r) : active === 'weekly' ? '헝가리 주요이슈 브리핑' : '헝가리·EU 일일 브리핑';
+    $('updated').textContent = stats ? '공식 통계 API 자동 수집｜갱신 ' + statsTime(statsData && statsData.generatedAt) : search ? '일일·주간 브리핑 아카이브' : r ? '확인시각 ' + hm(r.generatedAt) + ' KST｜' + r.coverage : '';
     var latestKey = c && (key(active, c.latest) || (c.index[0] && key(active, c.index[0])));
-    $('archive-banner').hidden = search || !latestKey || (!r ? !c.error : key(active, r) === latestKey);
+    $('archive-banner').hidden = search || stats || !latestKey || (!r ? !c.error : key(active, r) === latestKey);
     $('archive-banner-text').textContent = r ? label(active, r) + ' 지난 보고서를 보고 있습니다.' : '요청한 보고서를 불러오지 못했습니다.';
     document.title = $('report-title').textContent + ' | 헝가리·EU 경제통상 브리프';
   }
@@ -254,7 +348,7 @@
   }
   function flash(msg) { clearTimeout(flashTimer); $('status').textContent = msg; flashTimer = setTimeout(function () { $('status').textContent = ''; }, 3500); }
   function doCopy() {
-    if (active === 'search' || !state[active].report) return;
+    if (!state[active] || !state[active].report) return;
     var text = copyText(active), done = function () { flash('브리핑 텍스트를 복사했습니다.'); };
     function fallback() {
       var focus = document.activeElement, ta = document.createElement('textarea'); ta.value = text;
@@ -267,7 +361,7 @@
     if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
   }
   function readUrl() {
-    selectTab(location.hash === '#search' ? 'search' : location.hash === '#weekly' ? 'weekly' : 'daily', false);
+    selectTab(location.hash.slice(1), false);
     var u = new URL(location.href);
     ['daily', 'weekly'].forEach(function (kind) {
       var c = state[kind], d = u.searchParams.get(kind === 'daily' ? 'date' : 'week') || key(kind, c.latest);
@@ -301,9 +395,9 @@
     tabs.forEach(function (t) { $(t + '-tab').addEventListener('click', function () { selectTab(t, true); }); });
     $('tabs').addEventListener('keydown', function (e) {
       var n = tabs.indexOf(active);
-      if (e.key === 'ArrowRight') n = (n + 1) % 3;
-      else if (e.key === 'ArrowLeft') n = (n + 2) % 3;
-      else if (e.key === 'Home') n = 0; else if (e.key === 'End') n = 2; else return;
+      if (e.key === 'ArrowRight') n = (n + 1) % tabs.length;
+      else if (e.key === 'ArrowLeft') n = (n + tabs.length - 1) % tabs.length;
+      else if (e.key === 'Home') n = 0; else if (e.key === 'End') n = tabs.length - 1; else return;
       e.preventDefault(); selectTab(tabs[n], true); $(tabs[n] + '-tab').focus();
     });
     ['daily', 'weekly'].forEach(function (kind) {
@@ -325,7 +419,7 @@
       show(hit.kind, hit.d, true, hit.hit).then(function () { if (!hit.hit || !hit.hit.s) $('main').scrollIntoView({ block: 'start' }); });
     });
     window.addEventListener('hashchange', readUrl); window.addEventListener('popstate', readUrl);
-    readUrl(); initData('daily'); initData('weekly');
+    readUrl(); initData('daily'); initData('weekly'); initStats();
   }
   document.addEventListener('DOMContentLoaded', init);
 }());

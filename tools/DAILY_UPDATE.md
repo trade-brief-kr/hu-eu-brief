@@ -25,6 +25,17 @@ git add -A data feed.xml && git commit -m "Weekly brief $(python3 -c "import jso
 - 확인: https://trade-brief-kr.github.io/hu-eu-brief/data/weekly.json 의 weekStart가 지난주 월요일인지.
 - 일일과 주간 러너는 모드별 잠금이라 동시에 돌릴 수 있다(같은 모드 중복 실행만 막음).
 
+## C. 월간 통계 (매월 1일 오전 KST — 일일 절차와 별개, 일일에는 넣지 않음)
+「헝가리 주요 통계」 탭(data/stats.json/.js)을 공식·공개 API(Eurostat, BIS, ECB, World Bank, UN Comtrade)에서 다시 받는다. Codex 불필요.
+```bash
+cd /workspace/hu-eu-brief && git pull --ff-only
+python3 tools/fetch_stats.py                     # data/stats.json + data/stats.js 작성, index.html ?v= 갱신. 보통 1~2분
+git add data/stats.json data/stats.js index.html && git commit -m "Monthly stats $(TZ=Asia/Seoul date +%F)" && git push
+```
+- 종료 코드: 0 = 1개 이상 지표 갱신(실패한 지표는 직전 값 유지·stale 표시, errors에 기록) / 1 = 전부 실패(파일 변경 없음 → 커밋하지 않음).
+- 확인: https://trade-brief-kr.github.io/hu-eu-brief/data/stats.json 의 generatedAt이 오늘인지, `errors` 배열 확인.
+- 통계 갱신 실패는 일일·주간 브리핑과 무관(서로 막지 않음).
+
 ## 종료 코드 (run_codex_research.sh, 일일·주간 공통)
 0 성공 / 2 환경·사용법(동시 실행, 잘못된 --week-start, 끝나지 않은 주) / 10 Codex 실패 / 11 타임아웃(일일 1800s, 주간 2700s)
 / 12 결과 없음·JSON 오류 / 13 검증 실패 / 14 사전검증 실패.
