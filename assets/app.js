@@ -3,11 +3,10 @@
   var $ = function (id) { return document.getElementById(id); };
   var tabs = ['daily', 'weekly', 'search'], active = 'daily', hits = [], flashTimer;
   var names = {
-    hu_politics: '정치 및 정부(정책·지원)', hu_economy: '경제 및 산업(기업동향 포함)',
-    eu_policy: 'EU 경제통상 브리핑', eu_pubs: 'EU 주요 발간자료', followup: '오늘 확인할 것'
+    hu_politics: '정치 및 정부', hu_economy: '경제 및 산업',
+    eu_policy: 'EU 경제통상 이슈', eu_stats: 'EU 통계발표'
   };
-  var dailyNames = { hu_politics: '① 헝가리 정치·정부', hu_economy: '② 헝가리 경제·산업(기업동향 포함)',
-    eu_policy: '③ EU 경제통상 정책', eu_pubs: '④ EU 발간자료', followup: '⑤ 오늘 확인할 것' };
+  function sectionTitle(s) { return s.title || names[s.id] || s.id; }
   function bucket() { return { latest: null, report: null, index: [], cache: {}, ready: false, token: 0, request: '', error: '' }; }
   var state = { daily: bucket(), weekly: bucket() };
   function esc(s) {
@@ -60,13 +59,12 @@
   }
   function itemId(kind, s, n) { return kind + '-' + s + '-' + n; }
   function itemHtml(it, section, n, kind) {
-    var follow = section === 'followup', tag = kind === 'weekly' ? 'h4' : 'h3';
     var h = '<article class="item' + (it.korea === true ? ' korea-item' : '') + '" id="' + esc(itemId(kind, section, n)) + '" tabindex="-1">';
-    if (!follow) h += '<' + tag + '>□ (' + esc(date(it.date)) + ') ' + esc(it.title) +
+    h += '<h3>□ (' + esc(date(it.date)) + ') ' + esc(it.title) +
       (it.tag ? '<span class="chip">' + esc(it.tag) + '</span>' : '') +
-      (it.korea === true ? '<span class="korea-badge">한국 관련</span>' : '') + '</' + tag + '>';
+      (it.korea === true ? '<span class="korea-badge">한국 관련</span>' : '') + '</h3>';
     h += '<ul>' + (it.bullets || []).map(function (b) { return '<li class="bullet">' + esc(b.text) + '</li>'; }).join('') + '</ul>';
-    return h + (follow ? '' : sourceHtml(it)) + '</article>';
+    return h + sourceHtml(it) + '</article>';
   }
   function render(kind) {
     var c = state[kind], r = c.report, h = '';
@@ -75,16 +73,12 @@
       h = c.error || (!c.ready || c.request ? '브리핑을 불러오고 있습니다.' : kind === 'weekly' ? '주간 브리핑이 아직 없습니다' : '일일 브리핑이 아직 없습니다');
       $(kind).innerHTML = '<div class="card"><p class="empty" role="status">' + esc(h) + '</p></div>';
     } else {
-      h = '<section class="card headline"><h2>' + (kind === 'daily' ? '오늘의 핵심' : '이번 주 핵심') + '</h2><p>' + esc(r.headline) + '</p></section>';
-      if (kind === 'weekly') h += '<section class="card issues"><h2>&lt;주요 이슈 리스트&gt;</h2>';
       r.sections.forEach(function (s) {
-        h += kind === 'weekly' ? '<section class="weekly-group section-' + esc(s.id) + '"><h3>' + esc(names[s.id]) + '</h3>' :
-          '<section class="card section-' + esc(s.id) + '"><h2>' + esc(s.title) + '</h2>';
+        h += '<section class="card section-' + esc(s.id) + '"><h2>' + esc(sectionTitle(s)) + '</h2>';
         h += s.items.length ? s.items.map(function (it, n) { return itemHtml(it, s.id, n, kind); }).join('') : '<p class="empty">확인된 항목 없음</p>';
         h += '</section>';
       });
-      if (kind === 'weekly') h += '</section>';
-      if (r.notes && r.notes.length) h += '<aside class="notes"><h2>참고</h2><ul>' + r.notes.map(function (n) { return '<li>· ' + esc(n) + '</li>'; }).join('') + '</ul></aside>';
+      if (r.notes && r.notes.length) h += '<aside class="notes"><h2>수집 참고</h2><ul>' + r.notes.map(function (n) { return '<li>· ' + esc(n) + '</li>'; }).join('') + '</ul></aside>';
       $(kind).innerHTML = h;
     }
     updateNav(kind); updateChrome();
@@ -197,8 +191,8 @@
     var n = hits.push({ kind: kind, d: key(kind, entry), hit: hit }) - 1;
     var meta = '<span class="type-badge">[' + (kind === 'daily' ? '일일' : '주간') + ']</span>' + esc(label(kind, entry));
     return '<li><a href="' + esc(reportHref(kind, key(kind, entry))) + '" data-result="' + n + '">' +
-      (hit ? '<span class="result-meta">' + meta + ' · ' + esc((kind === 'daily' ? dailyNames : names)[hit.s] || '핵심') + '</span><span class="result-title">' +
-        esc(hit.s ? '□ (' + date(hit.d) + ') ' + hit.t : hit.t) + '</span>' : meta) + '</a></li>';
+      (hit ? '<span class="result-meta">' + meta + ' · ' + esc(names[hit.s] || hit.s) + '</span><span class="result-title">' +
+        esc('□ (' + date(hit.d) + ') ' + hit.t) + '</span>' : meta) + '</a></li>';
   }
   function renderSearch() {
     var q = $('search-query').value.trim().toLowerCase(), h = '', count = 0; hits = [];
@@ -206,7 +200,6 @@
       var entries = state[kind].index, list = '';
       entries.forEach(function (e) {
         if (!q) { list += searchLink(kind, e); return; }
-        if ((e.headline || '').toLowerCase().indexOf(q) >= 0) { list += searchLink(kind, e, { t: e.headline }); count++; }
         (e.titles || []).forEach(function (t) {
           if ((t.t || '').toLowerCase().indexOf(q) >= 0) { list += searchLink(kind, e, t); count++; }
         });
@@ -222,22 +215,21 @@
     var r = state[kind].report; if (!r) return '';
     var out = [title(kind, r)];
     if (kind === 'daily') out.push('확인시각 ' + hm(r.generatedAt) + ' KST｜' + r.coverage);
-    out.push((kind === 'daily' ? '오늘의 핵심' : '이번 주 핵심') + ' — ' + r.headline, '');
-    if (kind === 'weekly') out.push('<주요 이슈 리스트>', '');
+    out.push('');
     r.sections.forEach(function (s) {
-      if (!s.items.length) return;
-      out.push(kind === 'weekly' ? names[s.id] : s.title);
+      out.push(sectionTitle(s));
+      if (!s.items.length) out.push('확인된 항목 없음', '');
       s.items.forEach(function (it) {
-        if (s.id !== 'followup') out.push('□ (' + date(it.date) + ') ' + it.title + (it.tag ? ' ' + it.tag : '') + (it.korea === true ? ' [한국 관련]' : ''));
-        it.bullets.forEach(function (b) { out.push(' ㅇ ' + b.text); });
+        out.push('□ (' + date(it.date) + ') ' + it.title + (it.tag ? ' ' + it.tag : '') + (it.korea === true ? ' [한국 관련]' : ''));
+        (it.bullets || []).forEach(function (b) { out.push(' ㅇ ' + b.text); });
         var ss = sources(it);
-        if (s.id !== 'followup' && ss.length) out.push(' ・ 자료원: ' + ss.map(function (x) {
+        if (ss.length) out.push(' ・ 자료원: ' + ss.map(function (x) {
           return sourceLabel(x) + ' ' + x.url + (x.altUrl ? ' 「재게재」 ' + x.altUrl : '');
         }).join(', '));
         out.push('');
       });
     });
-    if (r.notes && r.notes.length) out.push('참고', r.notes.map(function (n) { return '· ' + n; }).join('\n'));
+    if (r.notes && r.notes.length) out.push('수집 참고', r.notes.map(function (n) { return '· ' + n; }).join('\n'));
     return out.join('\n').trim();
   }
   function flash(msg) { clearTimeout(flashTimer); $('status').textContent = msg; flashTimer = setTimeout(function () { $('status').textContent = ''; }, 3500); }
@@ -273,7 +265,7 @@
         return e && validDate(key(kind, e)) && all.map(function (x) { return key(kind, x); }).indexOf(key(kind, e)) === i;
       });
       if (c.latest && !c.index.some(function (e) { return key(kind, e) === key(kind, c.latest); })) {
-        var entry = { date: c.latest.date, weekStart: c.latest.weekStart, weekEnd: c.latest.weekEnd, headline: c.latest.headline, titles: [] };
+        var entry = { date: c.latest.date, weekStart: c.latest.weekStart, weekEnd: c.latest.weekEnd, titles: [] };
         c.latest.sections.forEach(function (s) { s.items.forEach(function (it) { entry.titles.push({ s: s.id, d: it.date, t: it.title }); }); });
         c.index.push(entry);
       }

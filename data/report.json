@@ -2,11 +2,10 @@
   "date": "2026-11-12",
   "generatedAt": "2026-11-12T09:36:20+09:00",
   "coverage": "최근 24시간 발표 중심",
-  "headline": "삼성SDI 괴드 공장 비상대응계획 공람·EU 디지털 소비자보호 강화 제안",
   "sections": [
     {
       "id": "hu_politics",
-      "title": "① 헝가리 정치·정부",
+      "title": "정치 및 정부",
       "items": [
         {
           "date": "2026-11-10",
@@ -63,7 +62,7 @@
     },
     {
       "id": "hu_economy",
-      "title": "② 헝가리 경제·산업(기업동향 포함)",
+      "title": "경제 및 산업",
       "items": [
         {
           "date": "2026-11-10",
@@ -89,7 +88,7 @@
           "title": "한국 배터리 3사, 헝가리 정상 가동",
           "bullets": [
             {
-              "text": "[누락 보완·11.10] 삼성SDI·SK온의 헝가리 공장 정상 가동 입장 및 에코프로 중단 라인 재가동.",
+              "text": "삼성SDI·SK온의 헝가리 공장 정상 가동 입장 및 에코프로 중단 라인 재가동.",
               "source": "EBN",
               "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1731099",
               "altUrl": "https://kr.investing.com/news/stock-market-news/article-2167823",
@@ -156,7 +155,7 @@
     },
     {
       "id": "eu_policy",
-      "title": "③ EU 경제통상 정책",
+      "title": "EU 경제통상 이슈",
       "items": [
         {
           "date": "2026-11-11",
@@ -195,8 +194,8 @@
       ]
     },
     {
-      "id": "eu_pubs",
-      "title": "④ EU 발간자료",
+      "id": "eu_stats",
+      "title": "EU 통계발표",
       "items": [
         {
           "date": "2026-11-11",
@@ -227,47 +226,11 @@
           "korea": false
         }
       ]
-    },
-    {
-      "id": "followup",
-      "title": "⑤ 오늘 확인할 것",
-      "items": [
-        {
-          "tag": "[한국기업]",
-          "title": "삼성SDI 괴드 공장 공람 후속",
-          "bullets": [
-            {
-              "text": "괴드시 원문 공고의 의견 제출 마감인 12월 1일과 초안 보완·승인 일정 확인 필요."
-            }
-          ],
-          "korea": false
-        },
-        {
-          "tag": "[헝가리]",
-          "title": "12일 정상회의·BKK 협약 후속",
-          "bullets": [
-            {
-              "text": "더블린 정상회의 결과와 부다페스트 공동 교통운영 협약의 실제 서명 여부 확인 필요."
-            }
-          ],
-          "korea": false
-        },
-        {
-          "tag": "[EU규제]",
-          "title": "디지털 소비자보호 법안 세부 검토",
-          "bullets": [
-            {
-              "text": "디지털 공정성법과 소비자보호협력 규정 개정안의 비EU 기업 의무·입법 일정 확인 필요."
-            }
-          ],
-          "korea": false
-        }
-      ]
     }
   ],
   "notes": [
     "수집 기준은 2026-11-11 09:30~2026-11-12 09:30 KST이며, 현지 2026-11-11 01:30~2026-11-12 01:30 CET에 해당.",
-    "ECB 발간자료는 경제회보 2026년 7호 박스의 사전공개분으로, 원문 공개와 공식 주간 일정의 공개 시각 교차 확인: https://www.ecb.europa.eu/press/calendars/weekly/html/index.en.html",
+    "ECB 항목은 경제회보 2026년 7호 박스의 사전공개분으로, 원문 공개와 공식 주간 일정의 공개 시각 교차 확인: https://www.ecb.europa.eu/press/calendars/weekly/html/index.en.html",
     "EBN 원문 직접 접속은 403 오류로, 검색 색인에서 원문 URL·게시 시각 확인 후 Investing.com 재게재 본문 대조.",
     "Eurostat의 11월 11일 FDI 등 발표는 날짜만 확인되어 정확한 게시 시각 미확인으로 제외; Politico는 robots.txt 접근 제한."
   ]

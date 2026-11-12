@@ -32,8 +32,8 @@ def titles_of(r):
 
 
 def index_entry(r):
-    return {'date': r['date'], 'headline': r['headline'], 'generatedAt': r['generatedAt'],
-            'itemCount': sum(len(s['items']) for s in r['sections'][:4]), 'titles': titles_of(r)}
+    return {'date': r['date'], 'generatedAt': r['generatedAt'],
+            'itemCount': sum(len(s['items']) for s in r['sections']), 'titles': titles_of(r)}
 
 
 def read_index(p):
@@ -50,17 +50,18 @@ def feed(daily, weekly):
     for kind, e in rows[:FEED_ITEMS]:
         pub = datetime.fromisoformat(e['generatedAt'].replace('Z', '+00:00'))
         desc = '\n'.join(f"({t['d']}) {t['t']}" for t in e['titles'])
+        first = f" · {e['titles'][0]['t']}" if e.get('titles') else ''
         if kind == 'daily':
-            title, link, guid = f"[일일] {e['date']} · {e['headline']}", f"{SITE}?date={e['date']}", f"hu-eu-daily-{e['date']}"
+            title, link, guid = f"[일일] {e['date']}{first}", f"{SITE}?date={e['date']}", f"hu-eu-daily-{e['date']}"
         else:
-            title = f"[주간] {e['weekStart']}~{e['weekEnd']} · {e['headline']}"
+            title = f"[주간] {e['weekStart']}~{e['weekEnd']}{first}"
             link, guid = f"{SITE}?week={e['weekStart']}#weekly", f"hu-eu-weekly-{e['weekStart']}"
         items.append(f"<item><title>{escape(title)}</title><link>{escape(link)}</link>"
                      f"<guid isPermaLink=\"false\">{guid}</guid><pubDate>{format_datetime(pub)}</pubDate>"
                      f"<description>{escape(desc)}</description></item>")
     return ('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>'
             '<title>헝가리·EU 경제통상 브리프</title>'
-            f'<link>{SITE}</link><description>헝가리 정치·경제와 EU 경제통상 정책·발간자료 일일·주간 브리핑</description>'
+            f'<link>{SITE}</link><description>헝가리 정치·경제와 EU 경제통상 이슈·통계발표 일일·주간 브리핑</description>'
             '<language>ko</language>' + ''.join(items) + '</channel></rss>\n')
 
 

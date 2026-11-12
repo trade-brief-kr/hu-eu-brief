@@ -19,7 +19,7 @@ from publish_daily import ARCHIVE, DATA, KST, WEEKLY, feed, read_index, titles_o
 
 
 def index_entry(r):
-    return {'weekStart': r['weekStart'], 'weekEnd': r['weekEnd'], 'headline': r['headline'], 'generatedAt': r['generatedAt'],
+    return {'weekStart': r['weekStart'], 'weekEnd': r['weekEnd'], 'generatedAt': r['generatedAt'],
             'itemCount': sum(len(s['items']) for s in r['sections']), 'titles': titles_of(r)}
 
 

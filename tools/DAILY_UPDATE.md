@@ -1,5 +1,6 @@
 # 일일·주간 업데이트 절차 (헝가리·EU 경제통상 브리프)
 
+독자는 일반 한국인(기업인, 공관·기관 관계자 등). 일일·주간 모두 4개 섹션, headline·오늘 확인할 것 없음.
 **에이전트는 직접 웹 조사하지 않는다.** 조사는 ChatGPT 구독 기반 Codex CLI(`codex --search exec`, reasoning high)가 하고,
 에이전트는 러너 실행 → 검증 → 게시 → push → 라이브 확인만 한다. 링크 curl 재검증은 기본 OFF(Codex 검증 신뢰).
 
@@ -35,7 +36,7 @@ git add -A data feed.xml && git commit -m "Weekly brief $(python3 -c "import jso
 - publish 스크립트 실패 시 종료 코드 1, 아무 파일도 바뀌지 않는다.
 
 ## 알림
-게시 후 headline과 섹션별 항목 수(①헝가리 정치·정부 ②경제·산업 ③EU 정책 ④EU 발간자료 ⑤오늘 확인할 것)를 사용자에게 알림
+게시 후 섹션별 항목 수(정치 및 정부 / 경제 및 산업 / EU 경제통상 이슈 / EU 통계발표)와 대표 항목 제목을 사용자에게 알림
 (알림 경로는 운영 에이전트 루틴이 담당). RSS: feed.xml (일일+주간).
 
 ## 규칙 요약

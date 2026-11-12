@@ -13,21 +13,16 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
-SECTION_IDS = ['hu_politics', 'hu_economy', 'eu_policy', 'eu_pubs', 'followup']
+SECTION_IDS = ['hu_politics', 'hu_economy', 'eu_policy', 'eu_stats']
 SECTION_TITLES = {
-    'hu_politics': '① 헝가리 정치·정부',
-    'hu_economy': '② 헝가리 경제·산업(기업동향 포함)',
-    'eu_policy': '③ EU 경제통상 정책',
-    'eu_pubs': '④ EU 발간자료',
-    'followup': '⑤ 오늘 확인할 것',
+    'hu_politics': '정치 및 정부',
+    'hu_economy': '경제 및 산업',
+    'eu_policy': 'EU 경제통상 이슈',
+    'eu_stats': 'EU 통계발표',
 }
-WEEKLY_SECTION_IDS = ['hu_politics', 'hu_economy', 'eu_policy', 'eu_pubs']
-WEEKLY_SECTION_TITLES = {
-    'hu_politics': '정치 및 정부(정책·지원)',
-    'hu_economy': '경제 및 산업(기업동향 포함)',
-    'eu_policy': 'EU 경제통상 브리핑',
-    'eu_pubs': 'EU 주요 발간자료',
-}
+# 일일·주간 동일 4개 섹션
+WEEKLY_SECTION_IDS = SECTION_IDS
+WEEKLY_SECTION_TITLES = SECTION_TITLES
 
 
 def require(cond, msg):
@@ -86,11 +81,8 @@ def bullet(b, path):
 def item(it, path, section_id):
     require(isinstance(it, dict), f'{path}: 객체여야 합니다.')
     string(it.get('tag', ''), path + '.tag', allow_empty=True)
-    string(it.get('title', ''), path + '.title', allow_empty=(section_id == 'followup'))
-    if section_id != 'followup':
-        ymd(it.get('date'), path + '.date')
-    elif it.get('date'):
-        ymd(it['date'], path + '.date')
+    string(it.get('title', ''), path + '.title')
+    ymd(it.get('date'), path + '.date')
     require(isinstance(it.get('korea', False), bool), f'{path}.korea: true/false')
     bs = it.get('bullets')
     require(isinstance(bs, list) and bs, f'{path}.bullets: 1개 이상 필요합니다.')
@@ -101,8 +93,7 @@ def item(it, path, section_id):
     for i, x in enumerate(srcs):
         require(isinstance(x, dict) and x.get('url'), f'{path}.sources[{i}]: url 필수')
         bullet(dict(x, text='-'), f'{path}.sources[{i}]')
-    if section_id != 'followup':
-        require(any(b.get('url') for b in bs), f'{path}: 출처 URL이 있는 bullet이 1개 이상 필요합니다(날조 금지·출처 필수).')
+    require(any(b.get('url') for b in bs), f'{path}: 출처 URL이 있는 bullet이 1개 이상 필요합니다(날조 금지·출처 필수).')
 
 
 def _sections(r, ids):
@@ -114,7 +105,7 @@ def _sections(r, ids):
         require(isinstance(s.get('items'), list), f'sections[{i}].items: 배열이어야 합니다.')
         for j, it in enumerate(s['items']):
             item(it, f'sections[{i}].items[{j}]', s['id'])
-    require(sum(len(s['items']) for s in secs[:4]) >= 1, 'sections: ①~④에 항목이 1개 이상 필요합니다.')
+    require(sum(len(s['items']) for s in secs) >= 1, 'sections: 항목이 1개 이상 필요합니다.')
     notes = r.get('notes', [])
     require(isinstance(notes, list) and all(isinstance(n, str) for n in notes), 'notes: 문자열 배열이어야 합니다.')
 
@@ -124,7 +115,7 @@ def validate(r):
     ymd(r.get('date'), 'date')
     iso(r.get('generatedAt'), 'generatedAt')
     string(r.get('coverage'), 'coverage')
-    string(r.get('headline'), 'headline')
+    require('headline' not in r, 'headline: 사용하지 않는 필드(삭제)')
     _sections(r, SECTION_IDS)
     return r
 
@@ -138,7 +129,7 @@ def validate_weekly(r):
     require((we - ws).days == 6, 'weekEnd: weekStart + 6일(일요일)이어야 합니다.')
     iso(r.get('generatedAt'), 'generatedAt')
     string(r.get('coverage'), 'coverage')
-    string(r.get('headline'), 'headline')
+    require('headline' not in r, 'headline: 사용하지 않는 필드(삭제)')
     _sections(r, WEEKLY_SECTION_IDS)
     for s in r['sections']:
         for it in s['items']:

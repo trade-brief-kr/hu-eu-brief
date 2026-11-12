@@ -19,7 +19,7 @@
 #   10 Codex 실행 실패 (비정상 종료)
 #   11 Codex 타임아웃
 #   12 Codex 결과 없음 또는 JSON 파싱 불가
-#   13 검증 실패 (날짜 불일치, 스키마 오류, ①~④ 항목 0건 등)
+#   13 검증 실패 (날짜 불일치, 스키마 오류, 항목 0건 등)
 #   14 publish 스크립트와 동일 규칙의 사전검증 실패
 # 실패 시 --out 파일은 변경되지 않는다. 로그: /tmp/hu-eu-brief-runs/codex-run-<모드>-<날짜시각>/ (--out 지정 시 그 폴더)
 set -uo pipefail
@@ -113,8 +113,6 @@ for i in range(7):
         continue
     found.append(d)
     for s in r.get('sections', []):
-        if s.get('id') == 'followup':
-            continue
         for it in s.get('items', []):
             print(json.dumps({'section': s['id'], 'date': it.get('date'), 'title': it.get('title'), 'korea': it.get('korea', False),
                               'bullets': it.get('bullets'), 'sources': it.get('sources', [])}, ensure_ascii=False))
@@ -131,20 +129,20 @@ PROMPT="$LOGDIR/prompt.md"
 {
 if [ "$MODE" = daily ]; then
 cat <<HDR
-당신은 한국 산업통상 담당자용 「헝가리·EU 경제통상 브리프」(일일 브리핑)의 조사·작성자다.
+당신은 한국 독자(기업인, 공관·기관 관계자 등)를 위한 「헝가리·EU 경제통상 브리프」(일일 브리핑)의 조사·작성자다.
 웹 검색으로 실제 기사·공식 발표를 찾아 확인하고, 결과를 현재 작업 폴더의 report.json 파일 하나로만 저장한다.
 다른 파일은 만들거나 수정하지 않는다. 화면 출력(최종 메시지)은 "DONE" 한 단어로 충분하다.
 
 ## 실행 정보
 - 오늘(KST): $TODAY, 현재 시각: $NOW_ISO (헝가리·브뤼셀 시각 = KST −8시간, 11~3월 기준)
 - 수집 구간: $YESTERDAY $NOW_HM ~ $TODAY $NOW_HM KST (최근 24시간). [누락 보완] 항목만 최대 3일 전까지
-  (해당 bullet 맨 앞에 "[누락 보완·MM.DD]" 표기).
+  (해당 bullet 맨 앞에 "[누락 보완·MM.DD]" 표기 — 기간 검증용이며 게시본에서는 자동 제거).
 
 ## 절대 원칙
 1. 지어내지 않는다. 검색으로 확인한 실제 URL·매체·게시 시각만 쓴다.
-2. ①~④ 각 항목의 첫 bullet에는 "source"(매체명), "url"(원문 주소), "publishedAt"(게시 시각, 시간대 포함 ISO 8601)을 넣는다.
+2. 각 항목의 첫 bullet에는 "source"(매체명), "url"(원문 주소), "publishedAt"(게시 시각, 시간대 포함 ISO 8601)을 넣는다.
    publishedAt은 후처리에서 기간 검증 후 날짜만 남는다. 기간 밖이면 삭제되므로 확실한 것만 쓴다.
-3. 출처 URL이 하나도 없는 ①~④ 항목은 삭제된다. ⑤ 오늘 확인할 것은 출처 없이 써도 된다.
+3. 출처 URL이 하나도 없는 항목은 삭제된다.
 4. 링크 HTTP 재검증은 후처리에서 하지 않는다. 출처·URL 검증은 Codex(본인)가 한다.
 5. URL에서 utm_source 등 추적 파라미터를 붙이지 않는다.
 
@@ -155,31 +153,29 @@ $PREV_TITLES
   "date": "$TODAY",
   "generatedAt": "작성 완료 시각 (예: ${TODAY}T08:10:00+09:00)",
   "coverage": "최근 24시간 발표 중심",
-  "headline": "오늘의 핵심 한 줄",
   "sections": [
-    {"id":"hu_politics","title":"① 헝가리 정치·정부","items":[
+    {"id":"hu_politics","title":"정치 및 정부","items":[
       {"date":"$YESTERDAY","tag":"","korea":false,"title":"명사형 한국어 제목",
        "bullets":[{"text":"핵심 한 줄(60자 안팎, 명사형 종결).","source":"Portfolio","url":"https://www.portfolio.hu/...","publishedAt":"${YESTERDAY}T14:05:00+01:00"},
                   {"text":"(선택) 영향·다음 단계 한 줄.","source":"Telex","url":"https://telex.hu/...","publishedAt":"${YESTERDAY}T15:20:00+01:00"}]}]},
-    {"id":"hu_economy","title":"② 헝가리 경제·산업(기업동향 포함)","items":[]},
-    {"id":"eu_policy","title":"③ EU 경제통상 정책","items":[]},
-    {"id":"eu_pubs","title":"④ EU 발간자료","items":[
-      {"date":"$YESTERDAY","tag":"[ECB]","title":"문서명 한국어","bullets":[{"text":"한 줄 요약.","source":"ECB","url":"https://www.ecb.europa.eu/...","publishedAt":"${YESTERDAY}T10:00:00+01:00"}]}]},
-    {"id":"followup","title":"⑤ 오늘 확인할 것","items":[{"tag":"","title":"","bullets":[{"text":"… 확인 필요."}]}]}
+    {"id":"hu_economy","title":"경제 및 산업","items":[]},
+    {"id":"eu_policy","title":"EU 경제통상 이슈","items":[]},
+    {"id":"eu_stats","title":"EU 통계발표","items":[
+      {"date":"$YESTERDAY","tag":"[Eurostat]","title":"유로지역 10월 소비자물가 속보","bullets":[{"text":"10월 물가상승률 전년 대비 ○.○%(9월 ○.○%), 에너지 ○.○%.","source":"Eurostat","url":"https://ec.europa.eu/eurostat/web/products-euro-indicators/w/...","publishedAt":"${YESTERDAY}T11:00:00+01:00"}]}]}
   ],
   "notes": ["확인하지 못한 점 등 (선택)"]
 }
 - bullet text에 "ㅇ" 기호는 넣지 않는다(화면에서 붙임). bullet 선택 필드: "altUrl"(재게재 URL, 원문 url과 함께만).
 - 각 bullet은 한 문장 60자 안팎. 같은 사안을 다룬 추가 매체는 항목의 선택 필드
   "sources": [{"source":"Index","url":"https://index.hu/...","publishedAt":"…+01:00","altUrl":"(선택)"}] 에 넣는다(자료원 줄에 함께 표시).
-- sections는 정확히 5개, 위 id 순서. 항목이 없으면 "items": [].
+- sections는 정확히 4개, 위 id 순서. headline 필드는 쓰지 않는다. 항목이 없으면 "items": [].
 
 ## 조사 규칙 (사용자 지정, 그대로 따른다)
 
 HDR
 else
 cat <<HDR
-당신은 한국 산업통상 담당자용 「헝가리·EU 경제통상 브리프」 주간판(KOTRA 부다페스트무역관 「헝가리 주요이슈 브리핑」 형식)의 조사·작성자다.
+당신은 한국 독자(기업인, 공관·기관 관계자 등)를 위한 「헝가리·EU 경제통상 브리프」 주간판(KOTRA 부다페스트무역관 「헝가리 주요이슈 브리핑」 형식)의 조사·작성자다.
 대상 주간: $WEEK_START(월) ~ $WEEK_END(일), 현지 기준. 아래 "일일 보관본 자료"를 기반으로 하되, 웹 검색으로 그 주의 주요 사안을
 직접 확인·보완하여 결과를 현재 작업 폴더의 weekly.json 파일 하나로만 저장한다. 다른 파일은 만들거나 수정하지 않는다.
 화면 출력(최종 메시지)은 "DONE" 한 단어로 충분하다.
@@ -196,7 +192,7 @@ cat <<HDR
    유료·접속 불가 매체(MLex 등)보다 공식 원문(policy.trade.ec.europa.eu, tron.trade.ec.europa.eu, eur-lex, 정부·기관 사이트)을 url로 우선한다.
 3. 출처 URL이 없는 항목은 삭제된다. URL에 utm_source 등 추적 파라미터를 붙이지 않는다.
 4. 같은 사안의 여러 날 보도는 하나의 항목으로 묶고, 일일본의 여러 줄은 한 줄 요약으로 압축한다. 추가 매체는 항목의 "sources" 배열에.
-5. 주간 핵심 사안이 일일본에 없으면 검색으로 보완한다(특히 KSH 월간 통계, MNB 결정, 정부 주요 결정, EU 무역구제·제재·CBAM·발간자료).
+5. 주간 핵심 사안이 일일본에 없으면 검색으로 보완한다(특히 KSH 월간 통계, MNB 결정, 정부 주요 결정, EU 무역구제·제재·CBAM, Eurostat·ECB 통계발표).
 
 ## 일일 보관본 자료 (JSON lines: section, date, title, korea, bullets)
 $WEEK_MATERIAL
@@ -207,19 +203,18 @@ $WEEK_MATERIAL
   "weekEnd": "$WEEK_END",
   "generatedAt": "작성 완료 시각 (예: ${TODAY}T09:00:00+09:00)",
   "coverage": "${WEEK_START//-/.}.~${WEEK_END//-/.}. 주간 누적",
-  "headline": "이번 주 핵심 한 줄",
   "sections": [
-    {"id":"hu_politics","title":"정치 및 정부(정책·지원)","items":[
+    {"id":"hu_politics","title":"정치 및 정부","items":[
       {"date":"$WEEK_START","tag":"","korea":false,"title":"명사형 한국어 제목",
        "bullets":[{"text":"이번 주 한 줄 요약(60자 안팎, 명사형 종결).","source":"Népszava","url":"https://nepszava.hu/...","publishedAt":"${WEEK_START}T09:30:00+01:00"},
                   {"text":"(선택) 영향·후속 한 줄.","source":"Magyar Nemzet","url":"https://magyarnemzet.hu/...","date":"$WEEK_START"}]}]},
-    {"id":"hu_economy","title":"경제 및 산업(기업동향 포함)","items":[]},
-    {"id":"eu_policy","title":"EU 경제통상 브리핑","items":[]},
-    {"id":"eu_pubs","title":"EU 주요 발간자료","items":[]}
+    {"id":"hu_economy","title":"경제 및 산업","items":[]},
+    {"id":"eu_policy","title":"EU 경제통상 이슈","items":[]},
+    {"id":"eu_stats","title":"EU 통계발표","items":[]}
   ],
   "notes": ["확인하지 못한 점 등 (선택)"]
 }
-- 섹션 4개, 위 id 순서. 각 섹션 안 항목은 date 오름차순.
+- 섹션 4개, 위 id 순서. 각 섹션 안 항목은 date 오름차순. headline 필드는 쓰지 않는다.
 - 간결 형식: 각 항목 = 제목 + 한 줄 요약 bullet 1개(+ 필요 시 1줄, 각 60자 안팎). 긴 문단 금지.
   같은 사안의 추가 매체는 항목의 선택 필드 "sources": [{"source":"Telex","url":"https://...","date":"YYYY-MM-DD" 또는 "publishedAt":"…"}]에 넣는다.
 - bullet text에 "ㅇ" 기호는 넣지 않는다. 선택 필드: "altUrl"(재게재 URL, 원문 url과 함께만).
@@ -241,9 +236,9 @@ cat <<TAIL
   europarl.europa.eu 보도자료, eur-lex 관보, ec.europa.eu/eurostat(euro indicators), ecb.europa.eu, eib.org.
 
 ## 마지막 점검 (저장 전에 반드시)
-- 날짜·sections 개수·순서·id, headline 비어 있지 않은지, JSON 문법 유효.
+- 날짜·sections 개수(4)·순서·id, JSON 문법 유효. headline·오늘 확인할 것 섹션 없음.
 - 각 항목 첫 bullet의 source·url·(publishedAt 또는 date) 재확인. 기간 밖·불확실하면 삭제.
-- 한국어 명사형 종결, 헝가리어 원문은 한국어로 번역, 단계(제안/채택/발효/시행) 구분, 내부 기밀·내부 인명 없음.
+- 한국어 명사형 종결, 헝가리어 원문은 한국어로 번역, 단계(제안/채택/발효/시행) 구분, 내부 업무 지시 표현·내부 인명 없음.
 - 현재 작업 폴더에 $FILE 저장 (UTF-8). 다른 파일 생성·수정 금지.
 TAIL
 } > "$PROMPT"

@@ -8,11 +8,11 @@
 처리(일일):
   1. JSON 파싱, date == 오늘(KST) 필수.
   2. 모든 URL에서 utm_* 추적 파라미터 제거.
-  3. sections를 hu_politics, hu_economy, eu_policy, eu_pubs, followup 5개 순서로 정규화(제목 기본값).
+  3. sections를 hu_politics, hu_economy, eu_policy, eu_stats 4개 순서로 정규화(제목 고정). headline·followup 등 다른 필드·섹션은 버림.
   4. bullet publishedAt 기간 확인: 기본 30시간(24h+여유). text가 "[누락 보완"으로 시작하면 96시간.
      기간 밖 → 삭제. url은 있는데 source가 없으면 삭제. publishedAt은 bullet "date"(게시 현지 날짜)로 바꿔 남김.
   5. 링크 curl 재검증은 기본 OFF (Codex 검증 신뢰). --check-links 시 404/410/DNS 실패만 삭제.
-  6. ①~④ 항목 중 출처 URL bullet이 없는 항목 삭제. 항목 date가 없으면 첫 출처 bullet 날짜로 채움.
+  6. 출처 URL bullet이 없는 항목 삭제. 항목 date가 없으면 첫 출처 bullet 날짜로 채움.
   7. build_report_js.validate 스키마 검증.
 처리(주간, --weekly): weekStart(월)~weekEnd(일) 범위. 항목 date가 범위 밖이면 삭제,
   bullet publishedAt은 weekStart-3일 ~ weekEnd+1일 허용. validate_weekly 검증.
@@ -21,6 +21,7 @@
 """
 import argparse
 import json
+import re
 import subprocess
 import sys
 from datetime import date, datetime, timedelta, timezone
@@ -116,6 +117,8 @@ def main(argv):
         ids, titles = SECTION_IDS, SECTION_TITLES
 
     by_id = {s.get('id'): s for s in r.get('sections', []) if isinstance(s, dict)}
+    if 'eu_stats' not in by_id and 'eu_pubs' in by_id:  # 구 id 호환
+        by_id['eu_stats'] = by_id['eu_pubs']
     sections = []
     for sid in ids:
         s = by_id.get(sid, {})
@@ -154,8 +157,9 @@ def main(argv):
                         log['removed'].append({'where': where, 'reason': f'기간 밖 publishedAt={pub}', 'text': b['text'][:60]})
                         continue
                     b['date'] = t.date().isoformat()
-                elif b.get('url') and sid != 'followup' and not b.get('date'):
+                elif b.get('url') and not b.get('date'):
                     log['warnings'].append(f'{where}: publishedAt·date 없는 출처')
+                b['text'] = re.sub(r'^\s*\[누락 보완[^\]]*\]\s*', '', b['text'])  # 내부 표기는 게시본에서 제거
                 if a.check_links and b.get('url') and link_dead(b['url']):
                     log['removed'].append({'where': where, 'reason': '링크 404/410/DNS', 'url': b['url']})
                     continue
@@ -173,14 +177,14 @@ def main(argv):
                 it.pop('sources', None)
             if not bullets:
                 continue
-            if sid != 'followup' and not any(b.get('url') for b in bullets):
+            if not any(b.get('url') for b in bullets):
                 log['removed'].append({'where': where, 'reason': '출처 URL 없는 항목'})
                 continue
             it['bullets'] = bullets
             it.setdefault('tag', '')
             it.setdefault('title', '')
             it['korea'] = bool(it.get('korea', False))
-            if sid != 'followup' and not it.get('date'):
+            if not it.get('date'):
                 d = next((b['date'] for b in bullets if b.get('date')), None)
                 if d:
                     it['date'] = d
@@ -188,13 +192,13 @@ def main(argv):
                 log['removed'].append({'where': where, 'reason': f"주간 범위 밖 date={it.get('date')}"})
                 continue
             items.append(it)
-        if a.weekly or sid != 'followup':
-            items.sort(key=lambda x: x.get('date', ''))
-        sections.append({'id': sid, 'title': s.get('title') or titles[sid], 'items': items})
+        items.sort(key=lambda x: x.get('date', ''))
+        sections.append({'id': sid, 'title': titles[sid], 'items': items})
     r['sections'] = sections
+    r.pop('headline', None)
     r.setdefault('notes', [])
 
-    for s in sections[:4]:
+    for s in sections:
         if not s['items']:
             log['warnings'].append(f"{s['title']} 항목 0건")
     srcs = [b.get('source', '').lower() for s in sections[:2] for it in s['items'] for b in it['bullets'] if b.get('url')]
@@ -204,9 +208,9 @@ def main(argv):
         (validate_weekly if a.weekly else validate)(r)
     except (ValueError, KeyError, TypeError) as e:
         return finish(13, str(e), r)
-    n = sum(len(s['items']) for s in sections[:4])
+    n = sum(len(s['items']) for s in sections)
     label = f"주간 {r['weekStart']}~{r['weekEnd']}" if a.weekly else r['date']
-    return finish(0, f"{label} 항목 {n}건(①~④), 삭제 {len(log['removed'])}건", r)
+    return finish(0, f"{label} 항목 {n}건, 삭제 {len(log['removed'])}건", r)
 
 
 if __name__ == '__main__':

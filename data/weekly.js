@@ -3,11 +3,10 @@ window.WEEKLY_DATA = {
   "weekEnd": "2026-11-08",
   "generatedAt": "2026-11-12T09:37:45+09:00",
   "coverage": "2026.11.02.~2026.11.08. 주간 누적",
-  "headline": "솔루스 계열 동박 생산동 가동 중단과 EU의 중국산 화학제품 무역구제 절차 확대",
   "sections": [
     {
       "id": "hu_politics",
-      "title": "정치 및 정부(정책·지원)",
+      "title": "정치 및 정부",
       "items": [
         {
           "date": "2026-11-02",
@@ -82,7 +81,7 @@ window.WEEKLY_DATA = {
     },
     {
       "id": "hu_economy",
-      "title": "경제 및 산업(기업동향 포함)",
+      "title": "경제 및 산업",
       "items": [
         {
           "date": "2026-11-02",
@@ -213,7 +212,7 @@ window.WEEKLY_DATA = {
     },
     {
       "id": "eu_policy",
-      "title": "EU 경제통상 브리핑",
+      "title": "EU 경제통상 이슈",
       "items": [
         {
           "date": "2026-11-05",
@@ -288,8 +287,8 @@ window.WEEKLY_DATA = {
       ]
     },
     {
-      "id": "eu_pubs",
-      "title": "EU 주요 발간자료",
+      "id": "eu_stats",
+      "title": "EU 통계발표",
       "items": [
         {
           "date": "2026-11-04",
