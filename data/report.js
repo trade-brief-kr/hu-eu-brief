@@ -1,6 +1,6 @@
 window.REPORT_DATA = {
-  "date": "2026-11-12",
-  "generatedAt": "2026-11-12T09:36:20+09:00",
+  "date": "2026-11-13",
+  "generatedAt": "2026-11-13T08:43:36+09:00",
   "coverage": "최근 24시간 발표 중심",
   "sections": [
     {
@@ -8,53 +8,48 @@ window.REPORT_DATA = {
       "title": "정치 및 정부",
       "items": [
         {
-          "date": "2026-11-10",
-          "tag": "[예산]",
+          "date": "2026-11-12",
+          "tag": "",
           "korea": false,
-          "title": "정부, 다년 예산 세부공개 의무 폐지 추진",
+          "title": "정부, 이스탄불협약 비준 추진 발표",
           "bullets": [
             {
-              "text": "정부의 2027년 예산 부수법안에 분야별 다년 세입·세출 전망 공개 의무 폐지 제안 포함.",
+              "text": "머저르 총리, 의회에 여성·가정폭력 방지 이스탄불협약 비준을 요청하고 여성 보호 입법 추진 발표.",
               "source": "Portfolio",
-              "url": "https://www.portfolio.hu/gazdasag/20261111/megszunne-a-teruletenkenti-tobbeves-koltsegvetesi-terv-kotelezettsege-875678",
-              "date": "2026-11-11"
+              "url": "https://www.portfolio.hu/gazdasag/20261112/magyar-peter-bejelentette-ratifikalnak-az-isztambuli-egyezmenyt-uj-csomaggal-vedenek-a-noket-876002",
+              "date": "2026-11-12"
             },
             {
-              "text": "정부의 기존 전망 신뢰성 부족 설명 및 대분류별 전망 유지 방침."
+              "text": "접근금지 규정 강화와 응급피임약 처방 의무 폐지 등을 포함한 형사·보건·사회정책 패키지 추진."
+            }
+          ],
+          "sources": [
+            {
+              "source": "444",
+              "url": "https://444.hu/2026/11/12/magyar-peter-kezdemenyezzuk-az-isztambuli-egyezmeny-ratifikalasat",
+              "date": "2026-11-12"
+            },
+            {
+              "source": "Magyar Nemzet",
+              "url": "https://magyarnemzet.hu/kulfold/2026/11/a-kormany-ratifikalna-az-isztambuli-egyezmenyt-kikovezett-ut-nyilt-meg-a-genderlobbi-elott",
+              "date": "2026-11-12"
             }
           ]
         },
         {
-          "date": "2026-11-11",
-          "tag": "[대외관계]",
+          "date": "2026-11-12",
+          "tag": "",
           "korea": false,
-          "title": "머저르 총리, 더블린 정상회의 출장",
+          "title": "정부·부다페스트, BKK 개편 협약 서명",
           "bullets": [
             {
-              "text": "머저르 페테르 총리의 유럽 안보·경쟁력 논의를 위한 더블린 출국.",
-              "source": "Index",
-              "url": "https://index.hu/belfold/2026/11/11/magyar-peter-dublin-csucstalalkozo-ruff-balint/",
-              "date": "2026-11-11"
-            },
-            {
-              "text": "13일 귀국 전까지 러프 발린트 부총리의 국내 국정 운영 대행."
-            }
-          ]
-        },
-        {
-          "date": "2026-11-11",
-          "tag": "[교통정책]",
-          "korea": false,
-          "title": "정부, BKK 지분 50% 확보 일정 확정",
-          "bullets": [
-            {
-              "text": "정부의 BKK 지분 50% 확보를 위한 19억8천만 포린트 지원 및 연말 완료 방침.",
+              "text": "정부·부다페스트, BKK 광역교통 개편 협약에 서명하고 총 3,400억 포린트의 재원 부담을 절반씩 분담.",
               "source": "Portfolio",
-              "url": "https://www.portfolio.hu/gazdasag/20261111/keszulodik-a-fordulat-a-fovarosi-kozlekedesben-itt-a-konkret-menetrend-875876",
-              "date": "2026-11-11"
+              "url": "https://www.portfolio.hu/gazdasag/20261112/uj-korszak-kezdodik-budapest-eleteben-alairtak-a-bkk-atalakitasarol-szolo-megallapodast-876048",
+              "date": "2026-11-12"
             },
             {
-              "text": "부다페스트시와 협약 체결은 11월 15일, 관련 법제 정비안 제출은 11월 30일 기한."
+              "text": "국가·시 각 3명이 참여하는 공동 이사회 구성과 12월 인선 예정, 도심·근교 교통 통합 추진."
             }
           ]
         }
@@ -65,89 +60,84 @@ window.REPORT_DATA = {
       "title": "경제 및 산업",
       "items": [
         {
-          "date": "2026-11-10",
+          "date": "2026-11-12",
           "tag": "[한국기업]",
           "korea": true,
-          "title": "괴드시, 삼성SDI 비상대응계획 초안 공람",
+          "title": "SK온 이반차 공장 오염 신고 지연 보도",
           "bullets": [
             {
-              "text": "괴드시의 삼성SDI 괴드 공장 외부 비상대응계획 초안 공개 및 12월 1일까지 주민 의견 수렴.",
-              "source": "글로벌이코노믹",
-              "url": "https://g-enews.com/breaking/sokview.php?ud=202611111033392661fbbec65dfb_1",
-              "date": "2026-11-11"
+              "text": "공개 결정문 인용 보도상 SK온 이반차 공장, 8월 10일 지하수 NMP 오염 인지 후 28일 당국에 신고.",
+              "source": "Népszabadság",
+              "url": "https://nszo.hu/2026/11/12/gazdasag/ivancsa-akkumulatorgyar-szennyezodes-kormanyhivatal-vizsgalat-magzatkarosito-oldoszer/",
+              "date": "2026-11-12"
             },
             {
-              "text": "주민 의견 취합 뒤 지자체 승인·상급기관 서명을 거치는 정식 시행 절차 예정."
+              "text": "회사는 오염원 규명을 위한 추가 조사를 사유로 제시했으나 당국은 18일간의 신고 지연 사유로 불인정."
             }
           ]
         },
         {
-          "date": "2026-11-10",
+          "date": "2026-11-12",
           "tag": "[한국기업]",
           "korea": true,
-          "title": "한국 배터리 3사, 헝가리 정상 가동",
+          "title": "통상본부장, 헝가리에 경영 지원 요청",
           "bullets": [
             {
-              "text": "삼성SDI·SK온의 헝가리 공장 정상 가동 입장 및 에코프로 중단 라인 재가동.",
-              "source": "EBN",
-              "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1731099",
-              "altUrl": "https://kr.investing.com/news/stock-market-news/article-2167823",
-              "date": "2026-11-10"
+              "text": "산업통상부, 통상본부장이 9일 헝가리 고위급 면담에서 한국기업의 안정적 투자·경영 지원을 요청한 사실 공개.",
+              "source": "조선비즈",
+              "url": "https://biz.chosun.com/industry/company/2026/11/12/VKUJSWCBGVAD5NCIVTPFPJ3EN4/",
+              "date": "2026-11-12"
             }
           ]
         },
         {
-          "date": "2026-11-10",
-          "tag": "[노동시장]",
+          "date": "2026-11-12",
+          "tag": "[지원제도]",
           "korea": false,
-          "title": "2027년 최저임금 노사정 협상 미타결",
+          "title": "영세·소기업 디지털화에 307억 포린트",
           "bullets": [
             {
-              "text": "2027년 최저임금 협상의 정액 인상 방식 논의 전환 및 노사정 합의 미도달.",
-              "source": "The Budapest Times",
-              "url": "https://www.budapesttimes.hu/economy/wages-talks-inch-forward-but-workers-and-bosses-still-cant-seal-the-deal/",
-              "date": "2026-11-11"
-            }
-          ]
-        },
-        {
-          "date": "2026-11-11",
-          "tag": "[환율]",
-          "korea": false,
-          "title": "달러 강세 속 포린트 약세",
-          "bullets": [
-            {
-              "text": "11일 오후 유로당 364.7포린트·달러당 328.75포린트 수준 거래.",
-              "source": "Világgazdaság",
-              "url": "https://www.vg.hu/penz-es-tokepiac/2026/11/forint-megy-a-dollar-mint-a-meszes-kapaszkodik-a-forint",
-              "date": "2026-11-11"
+              "text": "과학기술부, DIMOP Plusz 2개 사업으로 영세·소기업 3,300곳 이상에 디지털화 보조금 307억 포린트 지원 발표.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/uzlet/20261112/jon-az-allami-ingyenpenz-akar-12-millio-forintos-tamogatast-kaphatnak-a-magyar-cegek-876088",
+              "date": "2026-11-12"
             },
             {
-              "text": "미국 물가상승에 따른 달러 강세와 금리 인상 관측의 포린트 압박."
+              "text": "기업당 300만~1,200만 포린트, 최대 지원 비율 90%로 IT 장비·클라우드·보안 시스템 등 도입 지원."
             }
           ]
         },
         {
-          "date": "2026-11-11",
-          "tag": "[인프라]",
+          "date": "2026-11-12",
+          "tag": "",
           "korea": false,
-          "title": "부다페스트 공항 진입도로 확장 준비 재개",
+          "title": "리히터·일라이릴리, 글로벌 제휴 계약",
           "bullets": [
             {
-              "text": "정부의 공항 진입도로 왕복 4차로 확장 준비 재개 및 기존 설계 인허가 추진.",
-              "source": "Telex",
-              "url": "https://telex.hu/belfold/2026/11/11/gyorsforgalmi-ut-vitezy-david-kormanydontes",
-              "date": "2026-11-11"
+              "text": "리히터, 에스테트롤과 릴리 성분을 결합한 여성건강·심장대사 치료제 개발·생산·판매의 글로벌 독점 라이선스 계약 체결.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/uzlet/20261112/oriasi-bejelentes-partnersegre-lep-a-richter-es-az-eli-lilly-reszesedest-is-szerez-az-amerikai-gyogyszerorias-2-875938",
+              "date": "2026-11-12"
             },
             {
-              "text": "2027년 하반기 시공 입찰·이르면 2028년 준비공사·2029년 본공사 착수 예상."
+              "text": "릴리의 리히터 주식 1,500만 달러 매입도 계약에 포함, 거래 종결은 경쟁당국 심사 등 조건 충족 필요."
             }
-          ],
-          "sources": [
+          ]
+        },
+        {
+          "date": "2026-11-12",
+          "tag": "[건설·에너지]",
+          "korea": false,
+          "title": "공동주택 개보수·철도 입찰 계획 공개",
+          "bullets": [
             {
-              "source": "Világgazdaság",
-              "url": "https://www.vg.hu/kozelet/2026/11/vitezy-david-ferihegyi-gyorsforgalmi-ut-atepites-tisza",
-              "date": "2026-11-11"
+              "text": "교통투자부 장관, 향후 수개월 내 1조 포린트 이상 철도개발 입찰과 2,000억 포린트 초과 공동주택 개보수 구상 공개.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/ingatlan/20261112/vitezy-igy-porgetne-fel-a-miniszterium-a-kozbeszerzeseket-jovo-ev-elejen-indulhat-a-tarsashaz-felujitasi-program-875968",
+              "date": "2026-11-12"
+            },
+            {
+              "text": "개보수 사업은 2027년 1분기 개시 목표, 최소 30% 에너지효율 개선과 가구당 400만~500만 포린트 지원 구상."
             }
           ]
         }
@@ -158,36 +148,53 @@ window.REPORT_DATA = {
       "title": "EU 경제통상 이슈",
       "items": [
         {
-          "date": "2026-11-11",
-          "tag": "[디지털규제]",
+          "date": "2026-11-12",
+          "tag": "[탄소규제]",
           "korea": false,
-          "title": "집행위, 디지털 공정성법 제안",
+          "title": "EU, 에너지집약산업 무상배출권 확대 합의",
           "bullets": [
             {
-              "text": "집행위의 다크패턴 금지·가격 투명성·아동 보호 강화를 담은 디지털 공정성법 제안.",
-              "source": "Euronews",
-              "url": "https://www.euronews.com/2026/11/11/eu-targets-subscription-traps-addictive-design-and-hidden-fees-with-new-digital-rules",
-              "date": "2026-11-11"
+              "text": "이사회·의회, 2026~2030년 열·연료 기준 적용 산업의 무상배출권을 확대해 약 1억2,100만 개 완충 물량 확보에 잠정합의.",
+              "source": "EU 이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/12/emissions-trading-system-council-and-parliament-agree-to-boost-free-carbon-allowances-for-energy-intensive-industries/",
+              "date": "2026-11-12"
             },
             {
-              "text": "별도 소비자보호협력 규정 개정안에 대규모 위반 시 세계 연매출 최대 6% 과징금 제안."
+              "text": "화학·제지·식품·세라믹·유리 등 탄소누출 위험 업종 지원 목적, 양 기관 승인·정식 채택과 집행규칙 마련 예정."
             }
           ]
         },
         {
-          "date": "2026-11-11",
-          "tag": "[EU예산]",
+          "date": "2026-11-12",
+          "tag": "[CBAM·기후규제]",
           "korea": false,
-          "title": "EU 이사회·의회, 2027년 예산 합의",
+          "title": "EU 사법재판소, 기후법 7건 취소청구 기각",
           "bullets": [
             {
-              "text": "이사회·의회의 2027년 EU 예산 약정액 1,997억 유로·지급액 2,115억 유로 합의.",
-              "source": "EU 이사회",
-              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/11/eu-budget-for-2027-council-and-parliament-reach-agreement/",
-              "date": "2026-11-11"
+              "text": "EU 사법재판소, 폴란드의 Fit for 55 법령 7건 취소청구를 기각해 CBAM·배출권거래제·자동차 배출 규제 유지.",
+              "source": "Portfolio(MTI)",
+              "url": "https://www.portfolio.hu/unios-forrasok/20261112/kimondta-az-unios-birosag-hiaba-a-tiltakozas-ervenyben-maradnak-a-szigoru-zoldszabalyok-876146",
+              "date": "2026-11-12"
             },
             {
-              "text": "양 기관의 14일 내 정식 승인 필요 및 11월 23일 이사회 승인 예상."
+              "text": "해당 법령은 이사회 만장일치 대신 가중다수결을 포함하는 통상 입법절차로 채택 가능하다는 판단."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-12",
+          "tag": "[규제간소화]",
+          "korea": false,
+          "title": "EU, 어업·양식 통계규정 통합 잠정합의",
+          "bullets": [
+            {
+              "text": "이사회·의회, 기존 규정 5개를 하나로 통합하고 중복 보고를 줄이는 어업·양식 통계체계 개편에 잠정합의.",
+              "source": "EU 이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/12/fisheries-and-aquaculture-council-and-parliament-agree-on-modernised-framework-for-statistics/",
+              "date": "2026-11-12"
+            },
+            {
+              "text": "Eurostat 데이터 포털 구축과 일부 자료제출 면제·간소화 포함, 법률·언어 검토 후 양 기관의 정식 채택 예정."
             }
           ]
         }
@@ -198,29 +205,15 @@ window.REPORT_DATA = {
       "title": "EU 통계발표",
       "items": [
         {
-          "date": "2026-11-11",
+          "date": "2026-11-10",
           "tag": "[ECB]",
-          "title": "정제비용·마진의 에너지물가 영향 분석",
+          "title": "유로시스템 11월 6일 기준 주간 재무통계",
           "bullets": [
             {
-              "text": "정제비용·마진 상승이 원유 가격 하락에도 유로지역 에너지물가 전망을 높일 가능성 분석.",
+              "text": "11월 6일 기준 본원통화 3조9,009억 유로로 전주 대비 247억 유로 증가, 외화 순포지션 3,497억 유로로 보합.",
               "source": "ECB",
-              "url": "https://www.ecb.europa.eu/press/economic-bulletin/focus/2026/html/ecb.ebbox202607_05~d82730508f.en.html",
-              "date": "2026-11-11"
-            }
-          ],
-          "korea": false
-        },
-        {
-          "date": "2026-11-11",
-          "tag": "[ECB]",
-          "title": "유로지역 소비자의 스테이블코인 보유 분석",
-          "bullets": [
-            {
-              "text": "소비자 기대조사를 바탕으로 스테이블코인 보유의 제한적 규모와 금융안정 파급 위험 분석.",
-              "source": "ECB",
-              "url": "https://www.ecb.europa.eu/press/economic-bulletin/focus/2026/html/ecb.ebbox202607_08~f4ddf0117c.en.html",
-              "date": "2026-11-11"
+              "url": "https://www.ecb.europa.eu/press/annual-reports-financial-statements/wfs/2026/html/ecb.fs261110.en.html",
+              "date": "2026-11-10"
             }
           ],
           "korea": false
@@ -229,9 +222,9 @@ window.REPORT_DATA = {
     }
   ],
   "notes": [
-    "수집 기준은 2026-11-11 09:30~2026-11-12 09:30 KST이며, 현지 2026-11-11 01:30~2026-11-12 01:30 CET에 해당.",
-    "ECB 항목은 경제회보 2026년 7호 박스의 사전공개분으로, 원문 공개와 공식 주간 일정의 공개 시각 교차 확인: https://www.ecb.europa.eu/press/calendars/weekly/html/index.en.html",
-    "EBN 원문 직접 접속은 403 오류로, 검색 색인에서 원문 URL·게시 시각 확인 후 Investing.com 재게재 본문 대조.",
-    "Eurostat의 11월 11일 FDI 등 발표는 날짜만 확인되어 정확한 게시 시각 미확인으로 제외; Politico는 robots.txt 접근 제한."
+    "Eurostat의 11월 12일 예정 지표는 실제 발표 원문·게시 시각 미확인으로 미수록, ECB 주간 통계를 누락 보완.",
+    "444·Magyar Nemzet·Népszabadság 일부 원문 직접 열람 오류로 검색 색인 본문·게시정보를 대조해 사용.",
+    "MTI 원문 URL 미확인: 폴란드의 Fit for 55 관련 7건 취소청구 기각 보도(Portfolio 재게재, EU 사법재판소 공식 보도자료 대조).",
+    "ECB 게시 시각은 해당 주 공식 공표 일정의 11월 10일 15:00 CET와 발표 원문 날짜 대조."
   ]
 };
