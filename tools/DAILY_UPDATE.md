@@ -39,6 +39,10 @@ git add -A data feed.xml && git commit -m "Weekly brief $(python3 -c "import jso
 게시 후 섹션별 항목 수(정치 및 정부 / 경제 및 산업 / EU 경제통상 이슈 / EU 통계발표)와 대표 항목 제목을 사용자에게 알림
 (알림 경로는 운영 에이전트 루틴이 담당). RSS: feed.xml (일일+주간).
 
+## 캐시
+- publish_daily.py / publish_weekly.py가 게시 때마다 index.html의 CSS·JS·data/*.js 경로에 `?v=<KST 시각>`을 자동으로 붙인다(브라우저 캐시 무효화).
+  app.js는 같은 버전으로 JSON을 `cache: 'no-cache'`로 가져오고, 구 스키마(headline·followup·eu_pubs)는 화면에서 무시한다.
+
 ## 규칙 요약
 - 수동 정정: data/report.json(또는 data/weekly.json) 수정 후 publish 단계만 다시 실행.
 - 조사 규칙은 tools/research_prompt.md (일일·주간 공통, 수정 가능). 스키마는 README와 tools/build_report_js.py.

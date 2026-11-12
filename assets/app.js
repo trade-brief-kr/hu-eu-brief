@@ -6,7 +6,27 @@
     hu_politics: '정치 및 정부', hu_economy: '경제 및 산업',
     eu_policy: 'EU 경제통상 이슈', eu_stats: 'EU 통계발표'
   };
-  function sectionTitle(s) { return s.title || names[s.id] || s.id; }
+  var ORDER = ['hu_politics', 'hu_economy', 'eu_policy', 'eu_stats'];
+  var VER = (function () {
+    var el = document.currentScript || document.querySelector('script[src*="assets/app.js"]');
+    var m = el && /[?&]v=([\w.-]+)/.exec(el.getAttribute('src') || '');
+    return m ? m[1] : String(Math.floor(Date.now() / 60000));
+  }());
+  function bust(path) { return path + (path.indexOf('?') < 0 ? '?' : '&') + 'v=' + encodeURIComponent(VER); }
+  // 구 스키마(headline, followup, eu_pubs)가 캐시·보관본에 남아 있어도 4개 섹션만 그린다.
+  function normalize(r) {
+    if (!r || !Array.isArray(r.sections)) return r;
+    var by = {};
+    r.sections.forEach(function (s) { if (s && s.id) by[s.id === 'eu_pubs' ? 'eu_stats' : s.id] = s; });
+    var out = {};
+    Object.keys(r).forEach(function (k) { if (k !== 'headline') out[k] = r[k]; });
+    out.sections = ORDER.map(function (id) {
+      var s = by[id] || {};
+      return { id: id, title: names[id], items: Array.isArray(s.items) ? s.items.filter(function (it) { return it && it.title; }) : [] };
+    });
+    return out;
+  }
+  function sectionTitle(s) { return names[s.id] || s.title || s.id; }
   function bucket() { return { latest: null, report: null, index: [], cache: {}, ready: false, token: 0, request: '', error: '' }; }
   var state = { daily: bucket(), weekly: bucket() };
   function esc(s) {
@@ -74,7 +94,7 @@
       $(kind).innerHTML = '<div class="card"><p class="empty" role="status">' + esc(h) + '</p></div>';
     } else {
       r.sections.forEach(function (s) {
-        h += '<section class="card section-' + esc(s.id) + '"><h2>' + esc(sectionTitle(s)) + '</h2>';
+        h += '<section class="card sec section-' + esc(s.id) + '"><h2>' + esc(sectionTitle(s)) + '</h2>';
         h += s.items.length ? s.items.map(function (it, n) { return itemHtml(it, s.id, n, kind); }).join('') : '<p class="empty">확인된 항목 없음</p>';
         h += '</section>';
       });
@@ -127,13 +147,13 @@
     updateChrome(); if (write) syncUrl();
   }
   function fetchJson(path) {
-    return Promise.resolve().then(function () { return fetch(path, { cache: 'no-cache' }); }).then(function (r) {
+    return Promise.resolve().then(function () { return fetch(bust(path), { cache: 'no-cache' }); }).then(function (r) {
       if (!r.ok) throw new Error(r.status); return r.json();
     });
   }
   function loadScript(src) {
     return new Promise(function (ok, fail) {
-      var s = document.createElement('script'); s.src = src;
+      var s = document.createElement('script'); s.src = bust(src);
       s.onload = function () { s.remove(); ok(); }; s.onerror = function () { s.remove(); fail(new Error('없음')); };
       document.head.appendChild(s);
     });
@@ -153,7 +173,7 @@
       return (window[kind === 'daily' ? 'REPORT_ARCHIVE' : 'WEEKLY_ARCHIVE'] || {})[d];
     }).then(function (r) {
       if (!r || key(kind, r) !== d || !Array.isArray(r.sections)) throw new Error('보고서 없음');
-      c.cache[d] = r; return r;
+      r = normalize(r); c.cache[d] = r; return r;
     });
   }
   function scrollHit(kind, r, hit) {
@@ -260,6 +280,7 @@
       read('data/' + (week ? 'weekly' : 'report'), function () { return window[prefix + '_DATA']; }).catch(function () { return null; }),
       read('data/' + (week ? 'weekly' : 'archive') + '/index', function () { return window[prefix + '_INDEX']; }).catch(function () { return []; })
     ]).then(function (res) {
+      res[0] = normalize(res[0]);
       c.latest = res[0] && Array.isArray(res[0].sections) && validDate(key(kind, res[0])) ? res[0] : null;
       c.index = (Array.isArray(res[1]) ? res[1] : []).filter(function (e, i, all) {
         return e && validDate(key(kind, e)) && all.map(function (x) { return key(kind, x); }).indexOf(key(kind, e)) === i;

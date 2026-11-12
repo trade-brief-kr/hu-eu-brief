@@ -7,8 +7,9 @@
   --check-weekly  주간 파일만 검증 (쓰기 없음)
 """
 import json
+import re
 import sys
-from datetime import date, datetime
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -137,6 +138,20 @@ def validate_weekly(r):
     return r
 
 
+ASSET_RE = re.compile(r'(href|src)="(assets/(?:style\.css|app\.js)|data/[^"?]+\.js)(\?v=[^"]*)?"')
+
+
+def stamp_index(version=None):
+    """index.html의 CSS·JS·data/*.js 경로에 ?v=<버전>을 붙여 브라우저 캐시를 무효화한다(게시 때마다 호출)."""
+    version = version or datetime.now(timezone(timedelta(hours=9))).strftime('%Y%m%d%H%M%S')
+    p = ROOT / 'index.html'
+    text = p.read_text(encoding='utf-8')
+    new = ASSET_RE.sub(lambda m: f'{m.group(1)}="{m.group(2)}?v={version}"', text)
+    if new != text:
+        p.write_text(new, encoding='utf-8')
+    return version
+
+
 def js_literal(value):
     return json.dumps(value, ensure_ascii=False, indent=2).replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
 
@@ -159,6 +174,7 @@ def main(argv):
             w = validate_weekly(json.loads(wp.read_text(encoding='utf-8')))
             (ROOT / 'data/weekly.js').write_text('window.WEEKLY_DATA = ' + js_literal(w) + ';\n', encoding='utf-8')
             print('data/weekly.js 작성:', w['weekStart'])
+        print('index.html 캐시 버전:', stamp_index())
         return 0
     except (OSError, ValueError, KeyError, IndexError, TypeError) as e:
         print('검증 실패:', e, file=sys.stderr)

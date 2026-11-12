@@ -16,7 +16,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_report_js import ROOT, js_literal, validate  # noqa: E402
+from build_report_js import ROOT, js_literal, stamp_index, validate  # noqa: E402
 
 KST = timezone(timedelta(hours=9))
 DATA = ROOT / 'data'
@@ -101,11 +101,13 @@ def main(argv):
         for tmp, final in staged:
             tmp.replace(final)
         staged.clear()
+        ver = stamp_index()
     except (OSError, ValueError, TypeError, KeyError) as e:
         for tmp, _ in staged:
             tmp.unlink(missing_ok=True)
         print(f'게시 실패(아무 파일도 변경하지 않음): {e}', file=sys.stderr)
         return 1
+    print(f'index.html 캐시 버전 v={ver}')
     print(f'게시 완료: {d} (보관 {len(index)}일) → data/report.js, data/archive/{d}.json/.js, index.json/.js, feed.xml')
     return 0
 

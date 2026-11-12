@@ -14,7 +14,7 @@ from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_report_js import ROOT, js_literal, validate_weekly  # noqa: E402
+from build_report_js import ROOT, js_literal, stamp_index, validate_weekly  # noqa: E402
 from publish_daily import ARCHIVE, DATA, KST, WEEKLY, feed, read_index, titles_of  # noqa: E402
 
 
@@ -63,11 +63,13 @@ def main(argv):
         for tmp, final in staged:
             tmp.replace(final)
         staged.clear()
+        ver = stamp_index()
     except (OSError, ValueError, TypeError, KeyError) as e:
         for tmp, _ in staged:
             tmp.unlink(missing_ok=True)
         print(f'게시 실패(아무 파일도 변경하지 않음): {e}', file=sys.stderr)
         return 1
+    print(f'index.html 캐시 버전 v={ver}')
     print(f'게시 완료: 주간 {w}~{r["weekEnd"]} (보관 {len(index)}주) → data/weekly.json/.js, data/weekly/{w}.json/.js, index.json/.js, feed.xml')
     return 0
 
