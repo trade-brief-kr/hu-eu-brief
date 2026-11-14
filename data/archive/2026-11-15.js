@@ -1,0 +1,193 @@
+window.REPORT_ARCHIVE = window.REPORT_ARCHIVE || {};
+window.REPORT_ARCHIVE["2026-11-15"] = {
+  "date": "2026-11-15",
+  "generatedAt": "2026-11-15T08:46:29+09:00",
+  "coverage": "최근 24시간 발표 중심",
+  "sections": [
+    {
+      "id": "hu_politics",
+      "title": "정치 및 정부",
+      "items": [
+        {
+          "date": "2026-11-13",
+          "tag": "[정부정책]",
+          "korea": false,
+          "title": "정부, 지방행정청 개편안 의견수렴 착수",
+          "bullets": [
+            {
+              "text": "정부, 지방행정청 개편 법률안 의견수렴 착수 및 개별 인허가에 대한 청장 지시권 제한 추진.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261114/nagy-atalakitasra-keszul-a-tisza-kormany-rengeteg-magyar-ugyintezeset-erintheti-876506",
+              "date": "2026-11-14"
+            },
+            {
+              "text": "전문행정기관 자율성 강화와 지휘체계 단순화 추진, 11월 21일까지 의견 접수."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-14",
+          "tag": "[인사]",
+          "korea": false,
+          "title": "정부, 농촌·지역개발 담당 차관 임명",
+          "bullets": [
+            {
+              "text": "정부, 서보 티보르(Szabó Tibor) 농촌·지역개발 담당 차관 임명 발표.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261114/uj-allamtitkart-neveztek-ki-fontos-feladatot-kapott-a-videkfejlesztesben-876496",
+              "date": "2026-11-14"
+            },
+            {
+              "text": "지역 정주 여건 개선을 위한 성 이슈트반 농촌개발 프로그램 집행 담당."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-14",
+          "tag": "[정치]",
+          "korea": false,
+          "title": "KDNP, 세스타크 당원권 정지 요청",
+          "bullets": [
+            {
+              "text": "KDNP 지도부, 세스타크 미클로시 전 장관에 대한 징계·윤리 절차와 당원권 정지 요청.",
+              "source": "Telex",
+              "url": "https://telex.hu/belfold/2026/11/14/a-kdnp-ugyvezeto-alelnoke-kizarna-a-partbol-sesztak-miklost-fegyelmit-eljarast-kezdemenyez",
+              "date": "2026-11-14"
+            },
+            {
+              "text": "피데스·KDNP 원내대표, 압수 현금 수사와 관련해 세스타크의 의원직 사퇴 요구.",
+              "source": "Világgazdaság",
+              "url": "https://www.vg.hu/kozelet/2026/11/fidesz-boka-janos-sesztak-miklos-penz-nvvh",
+              "date": "2026-11-14"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-14",
+          "tag": "[교통정책]",
+          "korea": false,
+          "title": "주차단속 디지털화·BKK 개편 추진",
+          "bullets": [
+            {
+              "text": "교통부, 카메라 차량 주차단속과 전자·우편 추가요금 통지를 허용하는 법 개정안 의견수렴 착수.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261114/eltunhetnek-a-parkolasi-mikulascsomagok-nagy-valtozas-johet-a-kozlekedesben-876504",
+              "date": "2026-11-14"
+            },
+            {
+              "text": "2027년 1월 1일 BKK의 정부·부다페스트 공동 교통조정기구 전환을 위한 법적 기반 마련 추진."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hu_economy",
+      "title": "경제 및 산업",
+      "items": [
+        {
+          "date": "2026-11-13",
+          "tag": "[철도]",
+          "korea": false,
+          "title": "부다페스트–베오그라드 여객 개통 지연",
+          "bullets": [
+            {
+              "text": "교통부, 신호시스템 소프트웨어 보완으로 12월 13일 새 시간표에서 해당 노선 여객열차 제외.",
+              "source": "Világgazdaság",
+              "url": "https://www.vg.hu/vilaggazdasag-magyar-gazdasag/2026/11/budapest-belgrad-vasutvonal-vitezy-david-felujtas",
+              "date": "2026-11-14"
+            },
+            {
+              "text": "보완 뒤 안전시험 재실시 예정으로, 여객 운행 개시일 미정."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-14",
+          "tag": "[유통]",
+          "korea": false,
+          "title": "6월 말 식료품 판매점, 전년 대비 2.4% 감소",
+          "bullets": [
+            {
+              "text": "KSH 통계 인용 보도, 6월 말 식료품 판매점 3만468개로 전년 동기 대비 749개(2.4%) 감소.",
+              "source": "HVG",
+              "url": "https://hvg.hu/gazdasag/20261114_ot-ev-alatt-minden-hatodik-elelmiszerbolt-eltunt-magyarorszagrol",
+              "date": "2026-11-14"
+            },
+            {
+              "text": "2021년 중반 대비 전체 점포 17% 이상, 개인사업자 운영 점포 26.1% 감소."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-14",
+          "tag": "[에너지]",
+          "korea": false,
+          "title": "1~10월 전력 수입 비중 22.8%",
+          "bullets": [
+            {
+              "text": "MAVIR 발표 인용 보도, 2026년 1~10월 전력 수입 비중 22.8%로 2025년 연간 20.2% 대비 상승.",
+              "source": "Világgazdaság",
+              "url": "https://www.vg.hu/vilaggazdasag-magyar-gazdasag/2026/11/import-energia-aram-tarolas-ellatasbiztonsag",
+              "date": "2026-11-14"
+            },
+            {
+              "text": "업계 토론에서 수입 억제보다 비용 경쟁력·전력망 연계·저장설비 확대의 중요성 제기."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu_policy",
+      "title": "EU 경제통상 이슈",
+      "items": [
+        {
+          "date": "2026-11-12",
+          "tag": "[배출권거래]",
+          "korea": false,
+          "title": "EU, 산업계 무상 배출권 확대 잠정합의",
+          "bullets": [
+            {
+              "text": "이사회·의회, 2026~2030년 무상 배출권 약 1억2,100만개 확보를 위한 법 개정 잠정합의.",
+              "source": "EU 이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/12/emissions-trading-system-council-and-parliament-agree-to-boost-free-carbon-allowances-for-energy-intensive-industries/",
+              "date": "2026-11-12"
+            },
+            {
+              "text": "화학·제지·식품·유리 등 열·연료 기준 적용 업종 지원, 양 기관 공식 채택 필요."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-12",
+          "tag": "[규제간소화]",
+          "korea": false,
+          "title": "EU, 수산·양식 통계 규정 통합 잠정합의",
+          "bullets": [
+            {
+              "text": "이사회·의회, 수산·양식 통계 관련 5개 규정 통합과 보고 부담 완화를 위한 새 규정 잠정합의.",
+              "source": "EU 이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/12/fisheries-and-aquaculture-council-and-parliament-agree-on-modernised-framework-for-statistics/",
+              "date": "2026-11-12"
+            },
+            {
+              "text": "기존 행정자료 재활용과 Eurostat 정보포털 신설 추진, 양 기관 공식 채택 필요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu_stats",
+      "title": "EU 통계발표",
+      "items": []
+    }
+  ],
+  "notes": [
+    "수집 구간은 2026년 11월 14일 08:40~15일 08:40 KST이며, EU 정책 2건은 11월 12일 공식 발표의 누락 보완.",
+    "최근 24시간 Eurostat·ECB 공식 통계발표 중 원문과 게시 시각이 함께 확인된 신규 자료 없음.",
+    "HVG 식료품 판매점 기사 본문은 원문에서 확인하고, 게시 시각은 MediaScan의 HVG 기사 정보(11월 14일 12:00)와 대조.",
+    "유럽의회 투자자보호 보도자료는 로봇 확인 화면으로 게시 시각 확인이 제한되어 제외."
+  ]
+};
