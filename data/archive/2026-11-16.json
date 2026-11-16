@@ -1,0 +1,187 @@
+{
+  "date": "2026-11-16",
+  "generatedAt": "2026-11-16T08:58:15+09:00",
+  "coverage": "최근 24시간 발표 중심",
+  "sections": [
+    {
+      "id": "hu_politics",
+      "title": "정치 및 정부",
+      "items": [
+        {
+          "date": "2026-11-15",
+          "tag": "",
+          "korea": false,
+          "title": "피데스, 주택대출 지원 종료 헌법소원",
+          "bullets": [
+            {
+              "text": "피데스, 오트혼 스타르트 주택대출 지원 종료에 대한 헌법재판소 심사 및 경과규정 마련 요청.",
+              "source": "Telex",
+              "url": "https://telex.hu/gazdasag/2026/11/15/fidesz-alkotmanybirosag-beadvany-otthon-start-kivezetes",
+              "date": "2026-11-15"
+            }
+          ],
+          "sources": [
+            {
+              "source": "Magyar Nemzet",
+              "url": "https://magyarnemzet.hu/belfold/2026/11/alkotmanybirosaghoz-fordult-a-fidesz-az-otthon-start-sorsa-miatt",
+              "date": "2026-11-15"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-15",
+          "tag": "",
+          "korea": false,
+          "title": "자산회수청, 압수 현금 소유주 미확인",
+          "bullets": [
+            {
+              "text": "국가자산회수·보호청, 세스타크 전 장관 사건 수사 중 압수한 65억 포린트의 소유주 미확인 발표.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261115/megszolalt-unger-anna-nem-allunk-meg-65-milliardnal-ujabb-reszletek-derultek-ki-a-sesztak-ugyben-megtalalt-keszpenzrol-876566",
+              "date": "2026-11-15"
+            },
+            {
+              "text": "관련 절차의 신속화를 위한 법률 개정 준비 진행."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hu_economy",
+      "title": "경제 및 산업",
+      "items": [
+        {
+          "date": "2026-11-15",
+          "tag": "",
+          "korea": false,
+          "title": "2027년 연금·급여 증액안 1,230억 포린트",
+          "bullets": [
+            {
+              "text": "재무장관, 2027년 예산안에 70만 명 대상 연금·관련 급여 1,230억 포린트 증액안 포함 발표.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261115/karman-andras-123-milliard-forintos-csomag-erkezik-a-magyar-nyugdijasoknak-876532",
+              "date": "2026-11-15"
+            },
+            {
+              "text": "최저 노령연금 월 2만8,500→12만 포린트 인상 및 연금수급자용 SZÉP 카드 도입 계획."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-15",
+          "tag": "",
+          "korea": false,
+          "title": "구급차·구급기지에 194억 포린트 투자 계획",
+          "bullets": [
+            {
+              "text": "보건장관, 2027년 구급차 176대에 140억 포린트·구급기지 개보수에 54억 포린트 투입 계획 발표.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261115/hegedus-zsolt-176-uj-mentoautot-szerez-be-a-kormany-megkezdodik-a-mentoallomasok-felujitasa-is-876546",
+              "date": "2026-11-15"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-15",
+          "tag": "[EU–헝가리]",
+          "korea": false,
+          "title": "부다 남부 트램 연장 설계 입찰 공고",
+          "bullets": [
+            {
+              "text": "부다페스트교통센터(BKK), EU 재원으로 추진하는 부더포키 도로 트램 연장의 설계 조달 공고.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261115/vitezy-david-uj-budapesti-fejleszteseket-jelentett-be-876540",
+              "date": "2026-11-15"
+            },
+            {
+              "text": "1단계 에피테스 거리·2단계 부더포크 철도역까지의 노선 및 교차로·종점 개선 설계 계획."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-15",
+          "tag": "",
+          "korea": false,
+          "title": "16~22일 화물차·버스 집중 단속 예고",
+          "bullets": [
+            {
+              "text": "헝가리 경찰, ROADPOL 공동 점검의 일환으로 11월 16~22일 전국 화물차·버스 집중 단속 예고.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261115/kiadtak-a-figyelmeztetest-egyhetes-rendorsegi-akcio-indul-a-hazai-utakon-876518",
+              "date": "2026-11-15"
+            },
+            {
+              "text": "운전·휴식시간, 위험물 운송 규정 및 적법 운행 여부 중점 점검."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-15",
+          "tag": "[통계]",
+          "korea": false,
+          "title": "주택가격·소득 비율, 10년간 26.5% 상승",
+          "bullets": [
+            {
+              "text": "Telex의 Eurostat 자료 분석상 2015~2025년 헝가리 주택가격·소득 비율 26.5% 상승, EU 내 상승폭 3위.",
+              "source": "Telex",
+              "url": "https://telex.hu/gazdasag/2026/11/15/eurostat-ingatlan-vasarlas-jovedelemhez-kepest-felmeres-magyarorszag",
+              "date": "2026-11-15"
+            },
+            {
+              "text": "같은 기간 주택가격 266.6%·1인당 가계 명목소득 189.8% 증가, 2025년 헝가리 수치는 잠정치."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu_policy",
+      "title": "EU 경제통상 이슈",
+      "items": [
+        {
+          "date": "2026-11-13",
+          "tag": "",
+          "korea": false,
+          "title": "EU 정상, AI 경쟁력·기술 자립 논의",
+          "bullets": [
+            {
+              "text": "EU 정상, AI 경쟁력·기술 자립을 위한 민관 투자·공급망·청정에너지 확보 논의.",
+              "source": "유럽이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/13/remarks-by-president-antonio-costa-at-the-press-conference-following-the-informal-meeting-of-heads-of-state-or-government-of-13-november-2026/",
+              "date": "2026-11-13"
+            },
+            {
+              "text": "코스타 의장, 차기 EU 장기예산과 유럽경쟁력기금의 AI 투자 재원 역할 강조."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-13",
+          "tag": "",
+          "korea": false,
+          "title": "EU, 2027년 이후 우크라이나 재원 논의 예고",
+          "bullets": [
+            {
+              "text": "코스타 의장, 11월 26~27일 정상회의에서 2027년 이후 우크라이나 재원 수요 논의 예고.",
+              "source": "유럽이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/13/remarks-by-president-antonio-costa-at-the-press-conference-following-the-informal-meeting-of-heads-of-state-or-government-of-13-november-2026/",
+              "date": "2026-11-13"
+            },
+            {
+              "text": "향후 집행위원회 제안을 토대로 논의 예정으로 지원 규모·재원 조달 방식의 신규 확정 발표는 부재."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu_stats",
+      "title": "EU 통계발표",
+      "items": []
+    }
+  ],
+  "notes": [
+    "EU 통계는 수집 구간 내 신규 공식 발표의 원문과 게시 시각이 확인되지 않아 미수록."
+  ]
+}

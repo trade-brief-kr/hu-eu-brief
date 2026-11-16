@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-15",
-  "generatedAt": "2026-11-15T08:46:29+09:00",
+  "date": "2026-11-16",
+  "generatedAt": "2026-11-16T08:58:15+09:00",
   "coverage": "최근 24시간 발표 중심",
   "sections": [
     {
@@ -8,73 +8,40 @@
       "title": "정치 및 정부",
       "items": [
         {
-          "date": "2026-11-13",
-          "tag": "[정부정책]",
+          "date": "2026-11-15",
+          "tag": "",
           "korea": false,
-          "title": "정부, 지방행정청 개편안 의견수렴 착수",
+          "title": "피데스, 주택대출 지원 종료 헌법소원",
           "bullets": [
             {
-              "text": "정부, 지방행정청 개편 법률안 의견수렴 착수 및 개별 인허가에 대한 청장 지시권 제한 추진.",
-              "source": "Portfolio",
-              "url": "https://www.portfolio.hu/gazdasag/20261114/nagy-atalakitasra-keszul-a-tisza-kormany-rengeteg-magyar-ugyintezeset-erintheti-876506",
-              "date": "2026-11-14"
-            },
-            {
-              "text": "전문행정기관 자율성 강화와 지휘체계 단순화 추진, 11월 21일까지 의견 접수."
-            }
-          ]
-        },
-        {
-          "date": "2026-11-14",
-          "tag": "[인사]",
-          "korea": false,
-          "title": "정부, 농촌·지역개발 담당 차관 임명",
-          "bullets": [
-            {
-              "text": "정부, 서보 티보르(Szabó Tibor) 농촌·지역개발 담당 차관 임명 발표.",
-              "source": "Portfolio",
-              "url": "https://www.portfolio.hu/gazdasag/20261114/uj-allamtitkart-neveztek-ki-fontos-feladatot-kapott-a-videkfejlesztesben-876496",
-              "date": "2026-11-14"
-            },
-            {
-              "text": "지역 정주 여건 개선을 위한 성 이슈트반 농촌개발 프로그램 집행 담당."
-            }
-          ]
-        },
-        {
-          "date": "2026-11-14",
-          "tag": "[정치]",
-          "korea": false,
-          "title": "KDNP, 세스타크 당원권 정지 요청",
-          "bullets": [
-            {
-              "text": "KDNP 지도부, 세스타크 미클로시 전 장관에 대한 징계·윤리 절차와 당원권 정지 요청.",
+              "text": "피데스, 오트혼 스타르트 주택대출 지원 종료에 대한 헌법재판소 심사 및 경과규정 마련 요청.",
               "source": "Telex",
-              "url": "https://telex.hu/belfold/2026/11/14/a-kdnp-ugyvezeto-alelnoke-kizarna-a-partbol-sesztak-miklost-fegyelmit-eljarast-kezdemenyez",
-              "date": "2026-11-14"
-            },
+              "url": "https://telex.hu/gazdasag/2026/11/15/fidesz-alkotmanybirosag-beadvany-otthon-start-kivezetes",
+              "date": "2026-11-15"
+            }
+          ],
+          "sources": [
             {
-              "text": "피데스·KDNP 원내대표, 압수 현금 수사와 관련해 세스타크의 의원직 사퇴 요구.",
-              "source": "Világgazdaság",
-              "url": "https://www.vg.hu/kozelet/2026/11/fidesz-boka-janos-sesztak-miklos-penz-nvvh",
-              "date": "2026-11-14"
+              "source": "Magyar Nemzet",
+              "url": "https://magyarnemzet.hu/belfold/2026/11/alkotmanybirosaghoz-fordult-a-fidesz-az-otthon-start-sorsa-miatt",
+              "date": "2026-11-15"
             }
           ]
         },
         {
-          "date": "2026-11-14",
-          "tag": "[교통정책]",
+          "date": "2026-11-15",
+          "tag": "",
           "korea": false,
-          "title": "주차단속 디지털화·BKK 개편 추진",
+          "title": "자산회수청, 압수 현금 소유주 미확인",
           "bullets": [
             {
-              "text": "교통부, 카메라 차량 주차단속과 전자·우편 추가요금 통지를 허용하는 법 개정안 의견수렴 착수.",
+              "text": "국가자산회수·보호청, 세스타크 전 장관 사건 수사 중 압수한 65억 포린트의 소유주 미확인 발표.",
               "source": "Portfolio",
-              "url": "https://www.portfolio.hu/gazdasag/20261114/eltunhetnek-a-parkolasi-mikulascsomagok-nagy-valtozas-johet-a-kozlekedesben-876504",
-              "date": "2026-11-14"
+              "url": "https://www.portfolio.hu/gazdasag/20261115/megszolalt-unger-anna-nem-allunk-meg-65-milliardnal-ujabb-reszletek-derultek-ki-a-sesztak-ugyben-megtalalt-keszpenzrol-876566",
+              "date": "2026-11-15"
             },
             {
-              "text": "2027년 1월 1일 BKK의 정부·부다페스트 공동 교통조정기구 전환을 위한 법적 기반 마련 추진."
+              "text": "관련 절차의 신속화를 위한 법률 개정 준비 진행."
             }
           ]
         }
@@ -85,53 +52,84 @@
       "title": "경제 및 산업",
       "items": [
         {
-          "date": "2026-11-13",
-          "tag": "[철도]",
+          "date": "2026-11-15",
+          "tag": "",
           "korea": false,
-          "title": "부다페스트–베오그라드 여객 개통 지연",
+          "title": "2027년 연금·급여 증액안 1,230억 포린트",
           "bullets": [
             {
-              "text": "교통부, 신호시스템 소프트웨어 보완으로 12월 13일 새 시간표에서 해당 노선 여객열차 제외.",
-              "source": "Világgazdaság",
-              "url": "https://www.vg.hu/vilaggazdasag-magyar-gazdasag/2026/11/budapest-belgrad-vasutvonal-vitezy-david-felujtas",
-              "date": "2026-11-14"
+              "text": "재무장관, 2027년 예산안에 70만 명 대상 연금·관련 급여 1,230억 포린트 증액안 포함 발표.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261115/karman-andras-123-milliard-forintos-csomag-erkezik-a-magyar-nyugdijasoknak-876532",
+              "date": "2026-11-15"
             },
             {
-              "text": "보완 뒤 안전시험 재실시 예정으로, 여객 운행 개시일 미정."
+              "text": "최저 노령연금 월 2만8,500→12만 포린트 인상 및 연금수급자용 SZÉP 카드 도입 계획."
             }
           ]
         },
         {
-          "date": "2026-11-14",
-          "tag": "[유통]",
+          "date": "2026-11-15",
+          "tag": "",
           "korea": false,
-          "title": "6월 말 식료품 판매점, 전년 대비 2.4% 감소",
+          "title": "구급차·구급기지에 194억 포린트 투자 계획",
           "bullets": [
             {
-              "text": "KSH 통계 인용 보도, 6월 말 식료품 판매점 3만468개로 전년 동기 대비 749개(2.4%) 감소.",
-              "source": "HVG",
-              "url": "https://hvg.hu/gazdasag/20261114_ot-ev-alatt-minden-hatodik-elelmiszerbolt-eltunt-magyarorszagrol",
-              "date": "2026-11-14"
-            },
-            {
-              "text": "2021년 중반 대비 전체 점포 17% 이상, 개인사업자 운영 점포 26.1% 감소."
+              "text": "보건장관, 2027년 구급차 176대에 140억 포린트·구급기지 개보수에 54억 포린트 투입 계획 발표.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261115/hegedus-zsolt-176-uj-mentoautot-szerez-be-a-kormany-megkezdodik-a-mentoallomasok-felujitasa-is-876546",
+              "date": "2026-11-15"
             }
           ]
         },
         {
-          "date": "2026-11-14",
-          "tag": "[에너지]",
+          "date": "2026-11-15",
+          "tag": "[EU–헝가리]",
           "korea": false,
-          "title": "1~10월 전력 수입 비중 22.8%",
+          "title": "부다 남부 트램 연장 설계 입찰 공고",
           "bullets": [
             {
-              "text": "MAVIR 발표 인용 보도, 2026년 1~10월 전력 수입 비중 22.8%로 2025년 연간 20.2% 대비 상승.",
-              "source": "Világgazdaság",
-              "url": "https://www.vg.hu/vilaggazdasag-magyar-gazdasag/2026/11/import-energia-aram-tarolas-ellatasbiztonsag",
-              "date": "2026-11-14"
+              "text": "부다페스트교통센터(BKK), EU 재원으로 추진하는 부더포키 도로 트램 연장의 설계 조달 공고.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261115/vitezy-david-uj-budapesti-fejleszteseket-jelentett-be-876540",
+              "date": "2026-11-15"
             },
             {
-              "text": "업계 토론에서 수입 억제보다 비용 경쟁력·전력망 연계·저장설비 확대의 중요성 제기."
+              "text": "1단계 에피테스 거리·2단계 부더포크 철도역까지의 노선 및 교차로·종점 개선 설계 계획."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-15",
+          "tag": "",
+          "korea": false,
+          "title": "16~22일 화물차·버스 집중 단속 예고",
+          "bullets": [
+            {
+              "text": "헝가리 경찰, ROADPOL 공동 점검의 일환으로 11월 16~22일 전국 화물차·버스 집중 단속 예고.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261115/kiadtak-a-figyelmeztetest-egyhetes-rendorsegi-akcio-indul-a-hazai-utakon-876518",
+              "date": "2026-11-15"
+            },
+            {
+              "text": "운전·휴식시간, 위험물 운송 규정 및 적법 운행 여부 중점 점검."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-15",
+          "tag": "[통계]",
+          "korea": false,
+          "title": "주택가격·소득 비율, 10년간 26.5% 상승",
+          "bullets": [
+            {
+              "text": "Telex의 Eurostat 자료 분석상 2015~2025년 헝가리 주택가격·소득 비율 26.5% 상승, EU 내 상승폭 3위.",
+              "source": "Telex",
+              "url": "https://telex.hu/gazdasag/2026/11/15/eurostat-ingatlan-vasarlas-jovedelemhez-kepest-felmeres-magyarorszag",
+              "date": "2026-11-15"
+            },
+            {
+              "text": "같은 기간 주택가격 266.6%·1인당 가계 명목소득 189.8% 증가, 2025년 헝가리 수치는 잠정치."
             }
           ]
         }
@@ -142,36 +140,36 @@
       "title": "EU 경제통상 이슈",
       "items": [
         {
-          "date": "2026-11-12",
-          "tag": "[배출권거래]",
+          "date": "2026-11-13",
+          "tag": "",
           "korea": false,
-          "title": "EU, 산업계 무상 배출권 확대 잠정합의",
+          "title": "EU 정상, AI 경쟁력·기술 자립 논의",
           "bullets": [
             {
-              "text": "이사회·의회, 2026~2030년 무상 배출권 약 1억2,100만개 확보를 위한 법 개정 잠정합의.",
-              "source": "EU 이사회",
-              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/12/emissions-trading-system-council-and-parliament-agree-to-boost-free-carbon-allowances-for-energy-intensive-industries/",
-              "date": "2026-11-12"
+              "text": "EU 정상, AI 경쟁력·기술 자립을 위한 민관 투자·공급망·청정에너지 확보 논의.",
+              "source": "유럽이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/13/remarks-by-president-antonio-costa-at-the-press-conference-following-the-informal-meeting-of-heads-of-state-or-government-of-13-november-2026/",
+              "date": "2026-11-13"
             },
             {
-              "text": "화학·제지·식품·유리 등 열·연료 기준 적용 업종 지원, 양 기관 공식 채택 필요."
+              "text": "코스타 의장, 차기 EU 장기예산과 유럽경쟁력기금의 AI 투자 재원 역할 강조."
             }
           ]
         },
         {
-          "date": "2026-11-12",
-          "tag": "[규제간소화]",
+          "date": "2026-11-13",
+          "tag": "",
           "korea": false,
-          "title": "EU, 수산·양식 통계 규정 통합 잠정합의",
+          "title": "EU, 2027년 이후 우크라이나 재원 논의 예고",
           "bullets": [
             {
-              "text": "이사회·의회, 수산·양식 통계 관련 5개 규정 통합과 보고 부담 완화를 위한 새 규정 잠정합의.",
-              "source": "EU 이사회",
-              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/12/fisheries-and-aquaculture-council-and-parliament-agree-on-modernised-framework-for-statistics/",
-              "date": "2026-11-12"
+              "text": "코스타 의장, 11월 26~27일 정상회의에서 2027년 이후 우크라이나 재원 수요 논의 예고.",
+              "source": "유럽이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/13/remarks-by-president-antonio-costa-at-the-press-conference-following-the-informal-meeting-of-heads-of-state-or-government-of-13-november-2026/",
+              "date": "2026-11-13"
             },
             {
-              "text": "기존 행정자료 재활용과 Eurostat 정보포털 신설 추진, 양 기관 공식 채택 필요."
+              "text": "향후 집행위원회 제안을 토대로 논의 예정으로 지원 규모·재원 조달 방식의 신규 확정 발표는 부재."
             }
           ]
         }
@@ -184,9 +182,6 @@
     }
   ],
   "notes": [
-    "수집 구간은 2026년 11월 14일 08:40~15일 08:40 KST이며, EU 정책 2건은 11월 12일 공식 발표의 누락 보완.",
-    "최근 24시간 Eurostat·ECB 공식 통계발표 중 원문과 게시 시각이 함께 확인된 신규 자료 없음.",
-    "HVG 식료품 판매점 기사 본문은 원문에서 확인하고, 게시 시각은 MediaScan의 HVG 기사 정보(11월 14일 12:00)와 대조.",
-    "유럽의회 투자자보호 보도자료는 로봇 확인 화면으로 게시 시각 확인이 제한되어 제외."
+    "EU 통계는 수집 구간 내 신규 공식 발표의 원문과 게시 시각이 확인되지 않아 미수록."
   ]
 }
