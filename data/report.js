@@ -1,6 +1,6 @@
 window.REPORT_DATA = {
-  "date": "2026-11-16",
-  "generatedAt": "2026-11-16T08:58:15+09:00",
+  "date": "2026-11-17",
+  "generatedAt": "2026-11-17T08:48:45+09:00",
   "coverage": "최근 24시간 발표 중심",
   "sections": [
     {
@@ -8,40 +8,53 @@ window.REPORT_DATA = {
       "title": "정치 및 정부",
       "items": [
         {
-          "date": "2026-11-15",
+          "date": "2026-11-16",
           "tag": "",
           "korea": false,
-          "title": "피데스, 주택대출 지원 종료 헌법소원",
+          "title": "의회, 2027년 예산안 일반토론 개시",
           "bullets": [
             {
-              "text": "피데스, 오트혼 스타르트 주택대출 지원 종료에 대한 헌법재판소 심사 및 경과규정 마련 요청.",
-              "source": "Telex",
-              "url": "https://telex.hu/gazdasag/2026/11/15/fidesz-alkotmanybirosag-beadvany-otthon-start-kivezetes",
-              "date": "2026-11-15"
-            }
-          ],
-          "sources": [
+              "text": "의회, 2027년 예산안 일반토론 개시·정부의 내년 재정적자 목표 GDP 대비 4.9% 제시.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/percrol-percre/876606/a-penzugyminiszter-megkezdte-a-koltsegvetes-vitajat-1066240",
+              "date": "2026-11-16"
+            },
             {
-              "source": "Magyar Nemzet",
-              "url": "https://magyarnemzet.hu/belfold/2026/11/alkotmanybirosaghoz-fordult-a-fidesz-az-otthon-start-sorsa-miatt",
-              "date": "2026-11-15"
+              "text": "기독민주국민당(KDNP), 부유세·업종별 증세에 따른 중산층 부담과 고용 악화 우려 제기.",
+              "source": "Origo",
+              "url": "https://www.origo.hu/belpol/2026/11/koltsegvetes-vesztese-kozeposztaly-lesz-a-kdnp-szerint",
+              "date": "2026-11-16"
             }
           ]
         },
         {
-          "date": "2026-11-15",
+          "date": "2026-11-16",
           "tag": "",
           "korea": false,
-          "title": "자산회수청, 압수 현금 소유주 미확인",
+          "title": "내년부터 국경 간 현금 사전신고 확대",
           "bullets": [
             {
-              "text": "국가자산회수·보호청, 세스타크 전 장관 사건 수사 중 압수한 65억 포린트의 소유주 미확인 발표.",
+              "text": "2027년 1월부터 다른 EU 회원국과의 국경에서도 1만 유로 이상 현금 이동 신고 의무화 예정.",
               "source": "Portfolio",
-              "url": "https://www.portfolio.hu/gazdasag/20261115/megszolalt-unger-anna-nem-allunk-meg-65-milliardnal-ujabb-reszletek-derultek-ki-a-sesztak-ugyben-megtalalt-keszpenzrol-876566",
-              "date": "2026-11-15"
+              "url": "https://www.portfolio.hu/gazdasag/20261116/tiltast-vezet-be-a-tisza-kormany-a-magyar-hataron-nem-lehet-tobbe-titokban-nagy-mennyisegu-keszpenzt-rejtegetni-876672",
+              "date": "2026-11-16"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-16",
+          "tag": "",
+          "korea": false,
+          "title": "헝가리·우크라이나, 경제협력 협의",
+          "bullets": [
+            {
+              "text": "양국 외교장관, 브뤼셀 회담에서 교통·물류 인프라와 공동 경제·지역사업 협력 논의.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/global/20261116/egyeztetes-zajlott-ukrajna-kapcsan-a-karpataljai-magyarok-helyzete-is-teritekre-kerult-876868",
+              "date": "2026-11-16"
             },
             {
-              "text": "관련 절차의 신속화를 위한 법률 개정 준비 진행."
+              "text": "차기 고위급 회담 준비와 자카르파탸 지역 헝가리계 주민의 상황도 협의."
             }
           ]
         }
@@ -52,84 +65,61 @@ window.REPORT_DATA = {
       "title": "경제 및 산업",
       "items": [
         {
-          "date": "2026-11-15",
+          "date": "2026-11-16",
           "tag": "",
           "korea": false,
-          "title": "2027년 연금·급여 증액안 1,230억 포린트",
+          "title": "2027년 최저임금 협상 재개 예고",
           "bullets": [
             {
-              "text": "재무장관, 2027년 예산안에 70만 명 대상 연금·관련 급여 1,230억 포린트 증액안 포함 발표.",
+              "text": "Portfolio, 17일 노사정 협상에서 최저임금 7.5%·숙련직 최저임금 6.5% 인상안 논의 전망.",
               "source": "Portfolio",
-              "url": "https://www.portfolio.hu/gazdasag/20261115/karman-andras-123-milliard-forintos-csomag-erkezik-a-magyar-nyugdijasoknak-876532",
-              "date": "2026-11-15"
+              "url": "https://www.portfolio.hu/gazdasag/20261116/minimalber-2027-pillanatokon-belul-megszulethet-az-egyezseg-876694",
+              "date": "2026-11-16"
             },
             {
-              "text": "최저 노령연금 월 2만8,500→12만 포린트 인상 및 연금수급자용 SZÉP 카드 도입 계획."
+              "text": "정부·노동계는 해당 인상안을 지지하는 반면 사용자 측은 4~5% 인상 주장·최종 합의 미도출."
             }
           ]
         },
         {
-          "date": "2026-11-15",
+          "date": "2026-11-16",
           "tag": "",
           "korea": false,
-          "title": "구급차·구급기지에 194억 포린트 투자 계획",
+          "title": "라바, 트럭 자회사 설립",
           "bullets": [
             {
-              "text": "보건장관, 2027년 구급차 176대에 140억 포린트·구급기지 개보수에 54억 포린트 투입 계획 발표.",
+              "text": "라바(Rába), 16일 지분 100%를 보유하는 라바 트럭스 자회사 설립·구체적 사업내용 미공개.",
               "source": "Portfolio",
-              "url": "https://www.portfolio.hu/gazdasag/20261115/hegedus-zsolt-176-uj-mentoautot-szerez-be-a-kormany-megkezdodik-a-mentoallomasok-felujitasa-is-876546",
-              "date": "2026-11-15"
+              "url": "https://new.portfolio.hu/uzlet/20261116/uj-ceget-alapitott-a-raba-a-futomugyarto-elen-is-valtas-jon-876826",
+              "date": "2026-11-16"
             }
           ]
         },
         {
-          "date": "2026-11-15",
-          "tag": "[EU–헝가리]",
-          "korea": false,
-          "title": "부다 남부 트램 연장 설계 입찰 공고",
-          "bullets": [
-            {
-              "text": "부다페스트교통센터(BKK), EU 재원으로 추진하는 부더포키 도로 트램 연장의 설계 조달 공고.",
-              "source": "Portfolio",
-              "url": "https://www.portfolio.hu/gazdasag/20261115/vitezy-david-uj-budapesti-fejleszteseket-jelentett-be-876540",
-              "date": "2026-11-15"
-            },
-            {
-              "text": "1단계 에피테스 거리·2단계 부더포크 철도역까지의 노선 및 교차로·종점 개선 설계 계획."
-            }
-          ]
-        },
-        {
-          "date": "2026-11-15",
-          "tag": "",
-          "korea": false,
-          "title": "16~22일 화물차·버스 집중 단속 예고",
-          "bullets": [
-            {
-              "text": "헝가리 경찰, ROADPOL 공동 점검의 일환으로 11월 16~22일 전국 화물차·버스 집중 단속 예고.",
-              "source": "Portfolio",
-              "url": "https://www.portfolio.hu/gazdasag/20261115/kiadtak-a-figyelmeztetest-egyhetes-rendorsegi-akcio-indul-a-hazai-utakon-876518",
-              "date": "2026-11-15"
-            },
-            {
-              "text": "운전·휴식시간, 위험물 운송 규정 및 적법 운행 여부 중점 점검."
-            }
-          ]
-        },
-        {
-          "date": "2026-11-15",
+          "date": "2026-11-16",
           "tag": "[통계]",
           "korea": false,
-          "title": "주택가격·소득 비율, 10년간 26.5% 상승",
+          "title": "2분기 주택가격, 전분기 대비 하락",
           "bullets": [
             {
-              "text": "Telex의 Eurostat 자료 분석상 2015~2025년 헝가리 주택가격·소득 비율 26.5% 상승, EU 내 상승폭 3위.",
-              "source": "Telex",
-              "url": "https://telex.hu/gazdasag/2026/11/15/eurostat-ingatlan-vasarlas-jovedelemhez-kepest-felmeres-magyarorszag",
-              "date": "2026-11-15"
-            },
+              "text": "KSH의 2026년 2분기 명목 주택가격지수, 전년 동기 대비 11% 상승·전분기 대비 1.4% 하락.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/ingatlan/20261116/itt-a-statisztika-komoly-fordulatot-mutatnak-a-legfrissebb-lakasar-adatok-magyarorszagon-876818",
+              "date": "2026-11-16"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-16",
+          "tag": "",
+          "korea": false,
+          "title": "헤베시시, 채무조정 절차 신청 결정",
+          "bullets": [
             {
-              "text": "같은 기간 주택가격 266.6%·1인당 가계 명목소득 189.8% 증가, 2025년 헝가리 수치는 잠정치."
+              "text": "헤베시 시의회, 국고청의 2억8,800만 포린트 계좌 추심에 채무조정 절차 신청 결정.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261116/csodeljaras-indul-egy-magyar-varos-ellen-288-milliot-kovetel-az-allamkincstar-876776",
+              "date": "2026-11-16"
             }
           ]
         }
@@ -140,36 +130,53 @@ window.REPORT_DATA = {
       "title": "EU 경제통상 이슈",
       "items": [
         {
-          "date": "2026-11-13",
-          "tag": "",
+          "date": "2026-11-16",
+          "tag": "[무역구제]",
           "korea": false,
-          "title": "EU 정상, AI 경쟁력·기술 자립 논의",
+          "title": "EU, 5개국산 냉연강판 반덤핑관세",
           "bullets": [
             {
-              "text": "EU 정상, AI 경쟁력·기술 자립을 위한 민관 투자·공급망·청정에너지 확보 논의.",
-              "source": "유럽이사회",
-              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/13/remarks-by-president-antonio-costa-at-the-press-conference-following-the-informal-meeting-of-heads-of-state-or-government-of-13-november-2026/",
-              "date": "2026-11-13"
+              "text": "집행위, 인도·일본·대만·튀르키예·베트남산 일부 냉연강판에 확정 반덤핑관세 부과 발표.",
+              "source": "Daily Sabah",
+              "url": "https://www.dailysabah.com/business/economy/eu-imposes-anti-dumping-duties-on-steel-from-turkiye-4-other-countries",
+              "date": "2026-11-16"
             },
             {
-              "text": "코스타 의장, 차기 EU 장기예산과 유럽경쟁력기금의 AI 투자 재원 역할 강조."
+              "text": "관세율 인도 9.5%, 일본 27.9%, 대만 20.7~27%, 튀르키예 3~7.8%, 베트남 16% 적용."
             }
           ]
         },
         {
-          "date": "2026-11-13",
+          "date": "2026-11-16",
           "tag": "",
           "korea": false,
-          "title": "EU, 2027년 이후 우크라이나 재원 논의 예고",
+          "title": "EU, 러시아 전쟁자금 관련 제재 확대",
           "bullets": [
             {
-              "text": "코스타 의장, 11월 26~27일 정상회의에서 2027년 이후 우크라이나 재원 수요 논의 예고.",
-              "source": "유럽이사회",
-              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/13/remarks-by-president-antonio-costa-at-the-press-conference-following-the-informal-meeting-of-heads-of-state-or-government-of-13-november-2026/",
-              "date": "2026-11-13"
+              "text": "EU 이사회, 러시아 전쟁자금·그림자 선단 지원 관련 개인 12명·단체 101곳 추가 제재 채택.",
+              "source": "EU 이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/16/ukraine-eu-lists-113-individuals-and-entities-to-further-restrict-russia-s-ability-to-finance-its-war-of-aggression/",
+              "date": "2026-11-16"
             },
             {
-              "text": "향후 집행위원회 제안을 토대로 논의 예정으로 지원 규모·재원 조달 방식의 신규 확정 발표는 부재."
+              "text": "러시아 은행·금융기관 약 50곳 포함·관련 법령 EU 관보 게재 및 자산동결·자금제공 금지 대상 편입."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-16",
+          "tag": "",
+          "korea": false,
+          "title": "EU, 우크라이나 약 80억 유로 지급 승인",
+          "bullets": [
+            {
+              "text": "EU 이사회, 우크라이나 지원제도 내 단일 최대 규모인 약 80억 유로 지급을 위한 결정 채택.",
+              "source": "EU 이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/16/ukraine-facility-council-approves-largest-ever-payment-of-8-billion-to-kyiv/",
+              "date": "2026-11-16"
+            },
+            {
+              "text": "사법·반부패·에너지 등 20개 넘는 개혁목표 이행에 따른 승인·실제 지급은 후속 단계."
             }
           ]
         }
@@ -178,10 +185,28 @@ window.REPORT_DATA = {
     {
       "id": "eu_stats",
       "title": "EU 통계발표",
-      "items": []
+      "items": [
+        {
+          "date": "2026-11-16",
+          "tag": "[Eurostat]",
+          "korea": false,
+          "title": "유로지역·EU 9월 산업생산",
+          "bullets": [
+            {
+              "text": "9월 산업생산 전월 대비 유로지역 0.2%·EU 0.5% 증가, 전년 동월 대비 각각 1.5%·0.8% 감소.",
+              "source": "Eurostat",
+              "url": "https://ec.europa.eu/eurostat/en/web/products-euro-indicators/w/4-16112026-ap",
+              "date": "2026-11-16"
+            }
+          ]
+        }
+      ]
     }
   ],
   "notes": [
-    "EU 통계는 수집 구간 내 신규 공식 발표의 원문과 게시 시각이 확인되지 않아 미수록."
+    "집행위의 11월 16일 CBAM 탄소가격 공제 이행규정 발표는 게시 시각 미확인으로 본문 제외.",
+    "냉연강판 반덤핑은 집행위 원문과 대조하고 게시 시각이 명시된 Daily Sabah 기사를 수록.",
+    "Eurostat 산업생산 시각은 공식 보도자료 배포정책의 11:00 CET와 11월 16일 경제일정을 대조해 확인.",
+    "한국 기업 관련 검색에서 수집 구간 내 게시 시각까지 검증된 신규 보도 미확인."
   ]
 };
