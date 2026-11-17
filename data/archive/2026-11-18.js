@@ -1,0 +1,247 @@
+window.REPORT_ARCHIVE = window.REPORT_ARCHIVE || {};
+window.REPORT_ARCHIVE["2026-11-18"] = {
+  "date": "2026-11-18",
+  "generatedAt": "2026-11-18T08:44:23+09:00",
+  "coverage": "최근 24시간 발표 중심",
+  "sections": [
+    {
+      "id": "hu_politics",
+      "title": "정치 및 정부",
+      "items": [
+        {
+          "date": "2026-11-17",
+          "tag": "[에너지]",
+          "korea": false,
+          "title": "미국, 헝가리의 대러 에너지 제재 예외 연장",
+          "bullets": [
+            {
+              "text": "미 재무부가 몰(MOL)과 엠베엠(MVM)의 러시아산 원유·가스 구매 관련 제재 예외를 2027년 3월 19일까지 연장.",
+              "source": "Világgazdaság",
+              "url": "https://www.vg.hu/vilaggazdasag-magyar-gazdasag/2026/11/szankcio-ofac-kulugyminiszterium-mvm-mol-orosz-olaj",
+              "date": "2026-11-17"
+            }
+          ],
+          "sources": [
+            {
+              "source": "Telex",
+              "url": "https://telex.hu/gazdasag/2026/11/17/magyarorszag-egyesult-allamok-orosz-koolaj-foldgaz-szankcio-mentesseg",
+              "date": "2026-11-17"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-17",
+          "tag": "[EU–헝가리]",
+          "korea": false,
+          "title": "유럽의회 보고관, 헝가리 법치 개혁 평가",
+          "bullets": [
+            {
+              "text": "유럽의회 제7조 절차 보고관은 헝가리의 반부패 개혁을 긍정 평가하고 사법 독립과 난민제도의 추가 보완을 주문.",
+              "source": "Telex",
+              "url": "https://telex.hu/kulfold/2026/11/17/tineke-strik-europai-parlament-kepviselo-magyarorszag-hetedik-hetes-cikk-eljaras-jelentestevo",
+              "date": "2026-11-17"
+            },
+            {
+              "text": "유럽의회는 11월 말 헝가리 상황을 토론하고 12월 결의안을 표결할 예정."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-17",
+          "tag": "[인사]",
+          "korea": false,
+          "title": "헝가리, 팍시 원전 최고경영자 교체",
+          "bullets": [
+            {
+              "text": "경제에너지부 장관이 팍시 원전 최고경영자를 즉시 해임하고 비그 카로이(Vigh Károly) 운전본부장을 후임으로 임명.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261117/maris-megvan-a-paksi-atomeromu-uj-vezerigazgatoja-877184",
+              "date": "2026-11-17"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hu_economy",
+      "title": "경제 및 산업",
+      "items": [
+        {
+          "date": "2026-11-17",
+          "tag": "[금리]",
+          "korea": false,
+          "title": "헝가리 중앙은행, 기준금리 5.50% 동결",
+          "bullets": [
+            {
+              "text": "헝가리 중앙은행이 기준금리를 5.50%, 익일물 예금·담보대출 금리를 각각 4.50%와 6.50%로 동결.",
+              "source": "Telex",
+              "url": "https://telex.hu/gazdasag/2026/11/17/alapkamat-kamatdontes-monetaris-tanacs-5-5-szazalek",
+              "date": "2026-11-17"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-17",
+          "tag": "[기업지원]",
+          "korea": false,
+          "title": "헝가리, 중소기업 무이자 대출 한도 확대",
+          "bullets": [
+            {
+              "text": "헝가리 정부가 중소기업 기술개선 무이자 대출 한도를 2억 5천만 포린트, 창업기업 한도를 5천만 포린트로 확대.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/bank/20261117/kapitany-istvan-bejelentette-kedvezobbe-tette-a-kormany-a-kamatmentes-hitelek-felteteleit-877054",
+              "date": "2026-11-17"
+            },
+            {
+              "text": "헝가리개발은행의 두 기업 대출사업 신청 기한을 2027년 6월 30일까지 연장."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-17",
+          "tag": "[노동]",
+          "korea": false,
+          "title": "헝가리 노사, 2027년 최저임금 이견 축소",
+          "bullets": [
+            {
+              "text": "노사가 17일 정부·민간 협의체에서 2027년 일반·숙련직 최저임금의 이견을 좁혔으나 최종 합의는 미도출.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261117/minimalber-2027-kozelednek-az-allaspontok-de-meg-nincs-megegyezes-877204",
+              "date": "2026-11-17"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-17",
+          "tag": "[에너지]",
+          "korea": false,
+          "title": "헝가리, 공동주택 지역난방 개선 지원 확대",
+          "bullets": [
+            {
+              "text": "경제에너지부가 공동주택 지역난방 개선 예산을 26억 포린트 늘려 총 117억 포린트로 확대.",
+              "source": "Portfolio",
+              "url": "https://new.portfolio.hu/gazdasag/20261117/uj-bejelentest-tett-a-kormany-180-ezer-lakonal-valtozhat-a-futesszamla-876960",
+              "date": "2026-11-17"
+            },
+            {
+              "text": "기존 예산 부족으로 지원받지 못했던 257개 공동주택 단지도 난방비 배분기와 조절 밸브 설치 지원 대상에 포함."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu_policy",
+      "title": "EU 경제통상 이슈",
+      "items": [
+        {
+          "date": "2026-11-17",
+          "tag": "[한–EU]",
+          "korea": true,
+          "title": "관세청, 한·EU 관세협력 협의 결과 공개",
+          "bullets": [
+            {
+              "text": "관세청이 16일 주한 EU 대사와 한·EU 자유무역협정 이행 및 통관환경 개선 방안을 협의했다고 17일 발표.",
+              "source": "연합뉴스",
+              "url": "https://www.yna.co.kr/view/AKR20261117038700002",
+              "date": "2026-11-17"
+            },
+            {
+              "text": "관세청은 마약 밀반입과 지식재산권 침해에 공동 대응하기 위한 정보 교환과 단속 협력 확대도 요청."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-17",
+          "tag": "[디지털 규제]",
+          "korea": false,
+          "title": "EU 집행위, 테무 디지털서비스법 위반 예비 판단",
+          "bullets": [
+            {
+              "text": "EU 집행위가 중국 전자상거래 플랫폼 테무의 불법 제품 판매 방지 조치가 미흡해 디지털서비스법을 위반했다고 예비 판단.",
+              "source": "EUobserver",
+              "url": "https://euobserver.com/249412/eu-commission-again-rebukes-temu-over-failure-to-stop-illegal-product-sales-risking-another-hefty-fine/",
+              "date": "2026-11-17"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-17",
+          "tag": "[경제전망]",
+          "korea": false,
+          "title": "EU 집행위, 가을 경제전망 발표",
+          "bullets": [
+            {
+              "text": "EU 집행위가 2026년 EU 성장률 전망을 1.1%에서 1.4%로 상향하고 연간 소비자물가 상승률은 3.3%로 전망.",
+              "source": "Euronews",
+              "url": "https://hu.euronews.com/2026/11/17/eu-gazdasag-felulteljesit-az-energiasokk-miatt-tartosan-magas-az-inflacio",
+              "date": "2026-11-17"
+            },
+            {
+              "text": "헝가리 성장률은 2026년 1.8%, 2027년 2.8%, 재정적자는 각각 GDP의 7.3%와 5.2%로 전망.",
+              "source": "Economx",
+              "url": "https://www.economx.hu/magyar-gazdasag/2026/11/17/europai-bizottsag-gazdasag-novekedes-koltsegvetes-hiany-tisza-magyarorszag/",
+              "date": "2026-11-17"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-17",
+          "tag": "[EU–영국]",
+          "korea": false,
+          "title": "영국, EU 정상회의 통상 협의안 공개",
+          "bullets": [
+            {
+              "text": "영국 정부가 20일 EU 정상회의를 앞두고 농식품 무역장벽 완화와 양측 배출권거래제 연계 협의안의 개요를 공개.",
+              "source": "Reuters",
+              "url": "https://www.aol.com/articles/britain-sets-scope-uk-eu-193030000.html",
+              "date": "2026-11-17"
+            },
+            {
+              "text": "영국 정부는 배출권거래제를 연계하면 약 65억 파운드 규모 수출품의 EU 탄소국경조정 부담을 줄일 수 있다고 전망."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu_stats",
+      "title": "EU 통계발표",
+      "items": [
+        {
+          "date": "2026-11-17",
+          "tag": "[Eurostat]",
+          "title": "EU 2025년 심각한 물질·사회적 결핍률",
+          "bullets": [
+            {
+              "text": "2025년 EU 인구의 심각한 물질·사회적 결핍률은 6.3%로 2024년 6.4% 대비 0.1%p 하락.",
+              "source": "Eurostat",
+              "url": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20261117-1",
+              "date": "2026-11-17"
+            }
+          ],
+          "korea": false
+        },
+        {
+          "date": "2026-11-17",
+          "tag": "[Eurostat]",
+          "title": "EU 2024년 고등교육 외국 유학생 현황",
+          "bullets": [
+            {
+              "text": "2024년 EU 고등교육기관의 외국 유학생은 약 165만 명으로 전년 대비 4.0% 증가, 전체 재학생의 8.7% 차지.",
+              "source": "Eurostat",
+              "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/edn-20261117-1",
+              "date": "2026-11-17"
+            }
+          ],
+          "korea": false
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "원문 URL 미확인: Reuters 영국·EU 정상회의 협의안 보도(AOL 재게재).",
+    "유로지역 10월 소비자물가 확정치는 11월 18일 현지 발표 예정으로 수집 구간 밖.",
+    "수집 구간 내 헝가리 소재 한국 기업의 새 공장·투자 동향은 확인되지 않음."
+  ]
+};
