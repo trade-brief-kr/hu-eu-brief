@@ -1,0 +1,265 @@
+{
+  "date": "2026-11-20",
+  "generatedAt": "2026-11-20T08:57:55+09:00",
+  "coverage": "최근 24시간 발표 중심",
+  "sections": [
+    {
+      "id": "hu_politics",
+      "title": "정치 및 정부",
+      "items": [
+        {
+          "date": "2026-11-19",
+          "tag": "[EU–헝가리]",
+          "korea": false,
+          "title": "EU, 헝가리 방위대출 계획 54억 유로 승인",
+          "bullets": [
+            {
+              "text": "EU 일반이사회, 헝가리의 54억 유로 규모 방위대출(SAFE) 수정 투자계획 승인.",
+              "source": "Telex",
+              "url": "https://telex.hu/gazdasag/2026/11/19/eu-europai-unio-tanacsa-safe-jovahagyas",
+              "date": "2026-11-19"
+            },
+            {
+              "text": "집행위와 대출 계약 체결 뒤 총액의 15%를 선지급할 수 있는 구조."
+            }
+          ],
+          "sources": [
+            {
+              "source": "Index",
+              "url": "https://index.hu/gazdasag/2026/11/19/altalanos-ugyek-tanacsa-safe-vedelmi-program-reszvetel-biro-nagy-andras/",
+              "date": "2026-11-19"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-19",
+          "tag": "",
+          "korea": false,
+          "title": "헝가리 2027년 예산안 수정안 246건 제출",
+          "bullets": [
+            {
+              "text": "헝가리 의원들, 19일 오후 4시 마감까지 2027년 중앙정부 예산안 수정안 246건 제출.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261119/kozel-250-modosito-javaslat-erkezett-a-magyar-koltsegveteshez-877852",
+              "date": "2026-11-19"
+            },
+            {
+              "text": "피데스 등 야당, 40세 초과 두 자녀 어머니에게 평생 소득세 면제를 확대하는 방안 제안."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-19",
+          "tag": "",
+          "korea": false,
+          "title": "헝가리 정부, 정치인 재산 조사법 유지 방침",
+          "bullets": [
+            {
+              "text": "헝가리 정부, 대통령이 재의를 요구한 정치인 재산 증가 조사법을 그대로 추진한다는 입장 표명.",
+              "source": "Telex",
+              "url": "https://telex.hu/gazdasag/2026/11/19/tisza-vagyonosodas-politikusok-torveny-baka-andras",
+              "date": "2026-11-19"
+            },
+            {
+              "text": "법 공포 후 국세청이 정치인과 직계 가족의 재산 증가분을 과세 후 소득과 대조할 예정."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hu_economy",
+      "title": "경제 및 산업",
+      "items": [
+        {
+          "date": "2026-11-19",
+          "tag": "[한국기업]",
+          "korea": true,
+          "title": "한국타이어 헝가리 증설 라인, 내년 2분기 말 완전 가동 목표",
+          "bullets": [
+            {
+              "text": "한국타이어 헝가리 공장의 트럭·버스용 타이어 증설 라인 완전 가동 목표는 2027년 2분기 말.",
+              "source": "The Korea Times",
+              "url": "https://www.koreatimes.co.kr/business/companies/20261120/china-exposure-set-to-widen-profit-gap-among-korean-tire-makers",
+              "date": "2026-11-20"
+            },
+            {
+              "text": "현재 헝가리 공장이 공급하는 물량은 한국타이어 유럽 판매량의 40% 미만."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-19",
+          "tag": "",
+          "korea": false,
+          "title": "헝가리 산업용 전력망 요금 43~55% 인하",
+          "bullets": [
+            {
+              "text": "헝가리 에너지규제청 결정에 따라 2027년 1월부터 산업용 전력 송·배전 요금 43~55% 인하.",
+              "source": "Telex",
+              "url": "https://telex.hu/gazdasag/2026/11/19/aram-rendszerhasznalati-dij-valtozas-tizszeres-novekedes",
+              "date": "2026-11-19"
+            },
+            {
+              "text": "가정용 전력망 기본료 인상분은 정부가 보전할 계획."
+            }
+          ],
+          "sources": [
+            {
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/uzlet/20261119/nagy-bejelentes-a-kormanytol-hozzanyulnak-a-rendszerhasznalati-dijakhoz-877850",
+              "date": "2026-11-19"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-19",
+          "tag": "",
+          "korea": false,
+          "title": "헝가리, 2027년 최저임금 7.5% 인상 합의",
+          "bullets": [
+            {
+              "text": "헝가리 노사, 2027년 세전 월 최저임금을 7.5% 인상한 34만 7천 포린트로 합의.",
+              "source": "444",
+              "url": "https://444.hu/2026/11/19/a-minimalber-75-szazalekkal-a-garantalt-berminimum-61-szazalekkal-emelkedik-jovore",
+              "date": "2026-11-19"
+            },
+            {
+              "text": "자격 요건이 있는 직종의 세전 월 최저임금은 6.1% 오른 39만 6천 포린트로 합의."
+            }
+          ],
+          "sources": [
+            {
+              "source": "Magyar Nemzet",
+              "url": "https://magyarnemzet.hu/gazdasag/2026/11/minimalber-tisza-2",
+              "date": "2026-11-19"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-19",
+          "tag": "",
+          "korea": false,
+          "title": "포린트 약세, 장중 유로당 371.7포린트",
+          "bullets": [
+            {
+              "text": "19일 오후 4시 43분 유로당 371.7포린트에 도달하며 포린트 가치가 헝가리 총선 이후 최저치 기록.",
+              "source": "444",
+              "url": "https://444.hu/2026/11/19/godorben-a-forint",
+              "date": "2026-11-19"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu_policy",
+      "title": "EU 경제통상 이슈",
+      "items": [
+        {
+          "date": "2026-11-19",
+          "tag": "[통상]",
+          "korea": false,
+          "title": "EU·요르단 지속가능투자 촉진협정 협상 개시",
+          "bullets": [
+            {
+              "text": "EU와 요르단, 투자 절차 간소화와 규제 투명성 제고를 위한 지속가능투자 촉진협정 협상 개시.",
+              "source": "2eu.brussels",
+              "url": "https://2eu.brussels/en/news/eu-and-jordan-sign-173-million-in-financing-agreements-and-memorandum-for-up-to-500-million-in-loans",
+              "date": "2026-11-19"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-19",
+          "tag": "",
+          "korea": false,
+          "title": "EU 이사회, 화학제품 규정 간소화 최종 채택",
+          "bullets": [
+            {
+              "text": "EU 이사회, 화학물질 분류·표시·포장 규정과 화장품·비료 규정의 기업 의무를 간소화하는 개정안 최종 채택.",
+              "source": "EU 이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/19/simplification-council-signs-off-on-new-law-simplifying-and-streamlining-rules-on-chemical-products/",
+              "date": "2026-11-19"
+            },
+            {
+              "text": "관보 게재 20일 뒤 발효하며 세 규정의 개정 조항 적용일을 2030년 1월 1일로 통일."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-19",
+          "tag": "",
+          "korea": false,
+          "title": "EU, 메탄 수입 규제 2년 유예 잠정 합의",
+          "bullets": [
+            {
+              "text": "EU 이사회·의회, 천연가스·원유·석탄 수입업체의 메탄 모니터링·보고·검증 의무 2년 연기에 잠정 합의.",
+              "source": "EU 이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/19/methane-regulation-eu-agrees-targeted-amendment-to-safeguard-security-of-supply/",
+              "date": "2026-11-19"
+            },
+            {
+              "text": "양 기관의 공식 채택을 거쳐 해당 수입업체 의무 적용일을 2029년 1월 1일로 변경할 예정."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-19",
+          "tag": "",
+          "korea": false,
+          "title": "EU 이사회, 파견근로자 온라인 신고 규정 채택",
+          "bullets": [
+            {
+              "text": "EU 이사회, 역내 및 제3국 서비스 기업의 단기 파견근로자를 위한 표준 온라인 신고 규정 최종 채택.",
+              "source": "EU 이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/19/internal-market-for-services-council-adopts-regulation-on-the-e-declaration-of-posted-workers/",
+              "date": "2026-11-19"
+            },
+            {
+              "text": "회원국의 시스템 도입은 자율이며 규정은 EU 관보 게재 3개월 뒤 발효 예정."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu_stats",
+      "title": "EU 통계발표",
+      "items": [
+        {
+          "date": "2026-11-19",
+          "tag": "[Eurostat]",
+          "title": "유로지역 9월 건설생산",
+          "bullets": [
+            {
+              "text": "유로지역 9월 건설생산 전월 대비 0.1% 증가(8월 0.5% 감소), 전년 동월 대비 1.5% 감소.",
+              "source": "Eurostat",
+              "url": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/4-19112026-ap",
+              "date": "2026-11-19"
+            }
+          ],
+          "korea": false
+        },
+        {
+          "date": "2026-11-19",
+          "tag": "[ECB]",
+          "title": "유로지역 9월 경상수지",
+          "bullets": [
+            {
+              "text": "유로지역 9월 경상수지 120억 유로 흑자로 전월과 비슷한 수준, 최근 12개월 누적 흑자 2,480억 유로.",
+              "source": "ECB",
+              "url": "https://www.ecb.europa.eu/press/stats/bop/2026/html/ecb.bp261119~9319ec6fea.sv.html",
+              "date": "2026-11-19"
+            }
+          ],
+          "korea": false
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "헝가리 에너지규제청의 전력망 요금 결정문은 본문 열람이 제한돼 현지 보도를 인용.",
+    "에코프로비엠 데브레첸 공장 취재 기사와 EU·요르단 협상 개시 집행위 발표는 원문의 분 단위 게시 시각 미확인."
+  ]
+}
