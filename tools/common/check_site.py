@@ -8,6 +8,7 @@ from html.parser import HTMLParser
 from http.client import HTTPException
 import json
 import math
+import hashlib
 import os
 from pathlib import Path, PurePosixPath
 import re
@@ -309,7 +310,7 @@ def check_render(args, day):
             if sync_playwright is not None:
                 dom = render_playwright(sync_playwright, PlaywrightTimeout, args.site, screenshot, dates)
             if dom is None and browser is not None:
-                dom = render_chromium(browser, args.site, screenshot, CHROME_PROFILE / filename)
+                dom = render_chromium(browser, args.site, screenshot, CHROME_PROFILE / ("site-" + hashlib.sha1(args.site.encode()).hexdigest()[:10]))
             if dom is None:
                 return {"status": "skipped", "reason": "브라우저 없음"}
             if not screenshot.is_file() or screenshot.stat().st_size < 10 * 1024:
