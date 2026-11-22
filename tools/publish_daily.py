@@ -10,15 +10,15 @@
 """
 import json
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import datetime
 from email.utils import format_datetime
 from pathlib import Path
 from xml.sax.saxutils import escape
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_report_js import ROOT, js_literal, stamp_index, validate  # noqa: E402
+from common.brief_common import KST, Stager, js_literal, today_kst  # noqa: E402
+from build_report_js import ROOT, stamp_index, validate  # noqa: E402
 
-KST = timezone(timedelta(hours=9))
 DATA = ROOT / 'data'
 ARCHIVE = DATA / 'archive'
 WEEKLY = DATA / 'weekly'
@@ -67,10 +67,10 @@ def feed(daily, weekly):
 
 def main(argv):
     allow_any = '--allow-any-date' in argv
-    staged = []
+    stager = Stager()
     try:
         r = validate(json.loads((DATA / 'report.json').read_text(encoding='utf-8')))
-        today = datetime.now(KST).date().isoformat()
+        today = today_kst().isoformat()
         if not allow_any and r['date'] != today:
             raise ValueError(f"date: 오늘(KST {today})이 아님: {r['date']} (--allow-any-date로 무시 가능)")
         d = r['date']
@@ -85,26 +85,18 @@ def main(argv):
             entries[old['date']] = index_entry(old)
         index = sorted(entries.values(), key=lambda e: e['date'], reverse=True)
 
-        def stage(final, text):
-            tmp = final.with_name(final.name + '.tmp')
-            tmp.write_text(text, encoding='utf-8')
-            staged.append((tmp, final))
-
         body = js_literal(r)
-        stage(ARCHIVE / f'{d}.json', json.dumps(r, ensure_ascii=False, indent=2) + '\n')
-        stage(ARCHIVE / f'{d}.js', 'window.REPORT_ARCHIVE = window.REPORT_ARCHIVE || {};\n'
-              f'window.REPORT_ARCHIVE[{json.dumps(d)}] = {body};\n')
-        stage(ARCHIVE / 'index.json', json.dumps(index, ensure_ascii=False, indent=2) + '\n')
-        stage(ARCHIVE / 'index.js', 'window.REPORT_INDEX = ' + js_literal(index) + ';\n')
-        stage(DATA / 'report.js', 'window.REPORT_DATA = ' + body + ';\n')
-        stage(ROOT / 'feed.xml', feed(index, read_index(WEEKLY / 'index.json')))
-        for tmp, final in staged:
-            tmp.replace(final)
-        staged.clear()
+        stager.stage(ARCHIVE / f'{d}.json', json.dumps(r, ensure_ascii=False, indent=2) + '\n')
+        stager.stage(ARCHIVE / f'{d}.js', 'window.REPORT_ARCHIVE = window.REPORT_ARCHIVE || {};\n'
+                     f'window.REPORT_ARCHIVE[{json.dumps(d)}] = {body};\n')
+        stager.stage(ARCHIVE / 'index.json', json.dumps(index, ensure_ascii=False, indent=2) + '\n')
+        stager.stage(ARCHIVE / 'index.js', 'window.REPORT_INDEX = ' + js_literal(index) + ';\n')
+        stager.stage(DATA / 'report.js', 'window.REPORT_DATA = ' + body + ';\n')
+        stager.stage(ROOT / 'feed.xml', feed(index, read_index(WEEKLY / 'index.json')))
+        stager.commit()
         ver = stamp_index()
     except (OSError, ValueError, TypeError, KeyError) as e:
-        for tmp, _ in staged:
-            tmp.unlink(missing_ok=True)
+        stager.rollback()
         print(f'게시 실패(아무 파일도 변경하지 않음): {e}', file=sys.stderr)
         return 1
     print(f'index.html 캐시 버전 v={ver}')

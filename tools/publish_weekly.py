@@ -10,12 +10,12 @@
 """
 import json
 import sys
-from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_report_js import ROOT, js_literal, stamp_index, validate_weekly  # noqa: E402
-from publish_daily import ARCHIVE, DATA, KST, WEEKLY, feed, read_index, titles_of  # noqa: E402
+from common.brief_common import KST, Stager, js_literal, today_kst  # noqa: E402
+from build_report_js import ROOT, stamp_index, validate_weekly  # noqa: E402
+from publish_daily import ARCHIVE, DATA, WEEKLY, feed, read_index, titles_of  # noqa: E402
 
 
 def index_entry(r):
@@ -25,10 +25,10 @@ def index_entry(r):
 
 def main(argv):
     allow_any = '--allow-any-date' in argv
-    staged = []
+    stager = Stager()
     try:
         r = validate_weekly(json.loads((DATA / 'weekly.json').read_text(encoding='utf-8')))
-        today = datetime.now(KST).date().isoformat()
+        today = today_kst().isoformat()
         if not allow_any and not r['weekEnd'] < today:
             raise ValueError(f"weekEnd {r['weekEnd']}: 아직 끝나지 않은 주 (오늘 KST {today})")
         w = r['weekStart']
@@ -43,30 +43,22 @@ def main(argv):
             entries[old['weekStart']] = index_entry(old)
         index = sorted(entries.values(), key=lambda e: e['weekStart'], reverse=True)
 
-        def stage(final, text):
-            tmp = final.with_name(final.name + '.tmp')
-            tmp.write_text(text, encoding='utf-8')
-            staged.append((tmp, final))
-
         body = js_literal(r)
-        stage(WEEKLY / f'{w}.json', json.dumps(r, ensure_ascii=False, indent=2) + '\n')
-        stage(WEEKLY / f'{w}.js', 'window.WEEKLY_ARCHIVE = window.WEEKLY_ARCHIVE || {};\n'
-              f'window.WEEKLY_ARCHIVE[{json.dumps(w)}] = {body};\n')
-        stage(WEEKLY / 'index.json', json.dumps(index, ensure_ascii=False, indent=2) + '\n')
-        stage(WEEKLY / 'index.js', 'window.WEEKLY_INDEX = ' + js_literal(index) + ';\n')
+        stager.stage(WEEKLY / f'{w}.json', json.dumps(r, ensure_ascii=False, indent=2) + '\n')
+        stager.stage(WEEKLY / f'{w}.js', 'window.WEEKLY_ARCHIVE = window.WEEKLY_ARCHIVE || {};\n'
+                     f'window.WEEKLY_ARCHIVE[{json.dumps(w)}] = {body};\n')
+        stager.stage(WEEKLY / 'index.json', json.dumps(index, ensure_ascii=False, indent=2) + '\n')
+        stager.stage(WEEKLY / 'index.js', 'window.WEEKLY_INDEX = ' + js_literal(index) + ';\n')
         latest = index[0]['weekStart']
         latest_body = body if latest == w else js_literal(json.loads((WEEKLY / f'{latest}.json').read_text(encoding='utf-8')))
         latest_r = r if latest == w else json.loads((WEEKLY / f'{latest}.json').read_text(encoding='utf-8'))
-        stage(DATA / 'weekly.json', json.dumps(latest_r, ensure_ascii=False, indent=2) + '\n')
-        stage(DATA / 'weekly.js', 'window.WEEKLY_DATA = ' + latest_body + ';\n')
-        stage(ROOT / 'feed.xml', feed(read_index(ARCHIVE / 'index.json'), index))
-        for tmp, final in staged:
-            tmp.replace(final)
-        staged.clear()
+        stager.stage(DATA / 'weekly.json', json.dumps(latest_r, ensure_ascii=False, indent=2) + '\n')
+        stager.stage(DATA / 'weekly.js', 'window.WEEKLY_DATA = ' + latest_body + ';\n')
+        stager.stage(ROOT / 'feed.xml', feed(read_index(ARCHIVE / 'index.json'), index))
+        stager.commit()
         ver = stamp_index()
     except (OSError, ValueError, TypeError, KeyError) as e:
-        for tmp, _ in staged:
-            tmp.unlink(missing_ok=True)
+        stager.rollback()
         print(f'게시 실패(아무 파일도 변경하지 않음): {e}', file=sys.stderr)
         return 1
     print(f'index.html 캐시 버전 v={ver}')

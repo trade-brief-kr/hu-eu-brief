@@ -125,6 +125,7 @@ PY
 fi
 
 # --- 자체완결 프롬프트 구성 ---------------------------------------------------
+source "$ROOT/tools/common/codex_exec.sh"
 PROMPT="$LOGDIR/prompt.md"
 {
 if [ "$MODE" = daily ]; then
@@ -224,9 +225,9 @@ $WEEK_MATERIAL
 HDR
 fi
 cat "$ROOT/tools/research_prompt.md"
-cat <<TAIL
+cat <<CHECKLIST
 
-## 검색 체크리스트 (모두 개별 검색한 뒤 작성)
+## 검색 체크리스트 (시간 내 개별 검색)
 - 헝가리어 매체 최신 기사: portfolio.hu, index.hu, telex.hu, hvg.hu, 444.hu, nepszava.hu, magyarnemzet.hu, vg.hu, mandiner.hu, origo.hu
   (검색어 예: "kormány bejelentette", "Nagy Márton", "KSH infláció", "MNB alapkamat", "akkumulátorgyár", "Samsung SDI Göd", "SK On Iváncsa").
 - 영어 매체: hungarytoday.hu, budapesttimes.hu, bbj.hu, dailynewshungary.com, Reuters/Bloomberg/Euronews 헝가리 기사.
@@ -234,6 +235,9 @@ cat <<TAIL
 - 한국 기업: 삼성SDI·SK온·에코프로비엠·한국타이어·삼성전자·롯데알미늄·솔루스·두산 등 헝가리 공장 뉴스.
 - EU: ec.europa.eu/commission/presscorner, policy.trade.ec.europa.eu(무역구제 공지), taxation-customs(CBAM), consilium.europa.eu 보도자료,
   europarl.europa.eu 보도자료, eur-lex 관보, ec.europa.eu/eurostat(euro indicators), ecb.europa.eu, eib.org.
+CHECKLIST
+brief_time_budget_prompt "$TIMEOUT" "$FILE"
+cat <<TAIL
 
 ## 마지막 점검 (저장 전에 반드시)
 - 날짜·sections 개수(4)·순서·id, JSON 문법 유효. headline·오늘 확인할 것 섹션 없음.
@@ -245,20 +249,7 @@ TAIL
 if [ "$PROMPT_ONLY" = 1 ]; then echo "프롬프트만 생성(Codex 미실행): $PROMPT"; exit 0; fi
 
 # --- Codex 실행 (임시 폴더에서만 쓰기 가능: 저장소 수정 불가) ---
-echo "[$(TZ=Asia/Seoul date +%T) KST] Codex $MODE 조사 시작 (최대 ${TIMEOUT}s) work=$WORK log=$LOGDIR"
-START=$(date +%s)
-# 비밀 환경변수는 Codex에 넘기지 않는다.
-for v in $(compgen -e | grep -E '^(DATA_GO_KR|GH_|GITHUB_)|KEY|TOKEN|SECRET|PASSWORD' || true); do unset "$v"; done
-timeout --kill-after=60 "$TIMEOUT" codex --search exec -c model_reasoning_effort="\"$EFFORT\"" --skip-git-repo-check --ephemeral \
-  -s workspace-write -C "$WORK" -o "$LOGDIR/codex-last-message.txt" - < "$PROMPT" \
-  > "$LOGDIR/codex.log" 2>&1
-RC=$?
-ELAPSED=$(( $(date +%s) - START ))
-echo "[$(TZ=Asia/Seoul date +%T) KST] Codex 종료 rc=$RC, ${ELAPSED}s"
-echo "$ELAPSED" > "$LOGDIR/elapsed_seconds"
-if [ $RC -eq 124 ] || [ $RC -eq 137 ]; then echo "Codex 타임아웃(${TIMEOUT}s)" >&2; exit 11; fi
-if [ $RC -ne 0 ]; then echo "Codex 실패 rc=$RC (로그: $LOGDIR/codex.log)" >&2; tail -5 "$LOGDIR/codex.log" >&2; exit 10; fi
-if [ ! -s "$WORK/$FILE" ]; then echo "Codex가 $FILE을 만들지 않음" >&2; exit 12; fi
+brief_codex_run "$WORK" "$PROMPT" "$LOGDIR" "$TIMEOUT" "$EFFORT" "$FILE" "$MODE" || exit $?
 cp "$WORK/$FILE" "$LOGDIR/raw-$FILE"
 
 # --- 후처리 검증 (날짜·스키마·기간; 링크 curl은 기본 OFF) ---
@@ -270,8 +261,11 @@ else
     --log "$LOGDIR/verify-log.json" $CHECK_LINKS
 fi
 VRC=$?
-if [ $VRC -ne 0 ]; then exit $VRC; fi
-python3 - "$LOGDIR/verified-$FILE" "$MODE" "$TODAY" "$WEEK_START" "$ROOT/tools" <<'PY' || exit 14
+if [ "$VRC" -ne 0 ]; then
+  if [ "$BRIEF_SALVAGED" = 1 ]; then exit 11; fi
+  exit "$VRC"
+fi
+python3 - "$LOGDIR/verified-$FILE" "$MODE" "$TODAY" "$WEEK_START" "$ROOT/tools" <<'PY' || {
 import json, sys
 sys.path.insert(0, sys.argv[5])
 from build_report_js import validate, validate_weekly
@@ -285,8 +279,15 @@ else:
     assert r['date'] == sys.argv[3], f"date {r['date']} != {sys.argv[3]}"
     print(f"사전검증 통과(게시 안 함): {r['date']}")
 PY
+  if [ "$BRIEF_SALVAGED" = 1 ]; then exit 11; fi
+  exit 14
+}
 
 cp "$LOGDIR/verified-$FILE" "$OUT.tmp" && mv "$OUT.tmp" "$OUT"
 if [ "$MODE" = weekly ]; then NEXT="python3 tools/publish_weekly.py"; else NEXT="python3 tools/publish_daily.py"; fi
+if [ "$BRIEF_SALVAGED" = 1 ]; then
+  touch "$LOGDIR/salvaged"
+  echo "주의: 타임아웃 후 회수한 결과(일부 항목 누락 가능)"
+fi
 echo "완료: $OUT (로그 $LOGDIR). 다음 단계: $NEXT"
 exit 0

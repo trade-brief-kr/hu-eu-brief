@@ -9,7 +9,7 @@
 cd /workspace/hu-eu-brief && git pull --ff-only
 bash tools/run_codex_research.sh                 # 결과: data/report.json (검증 통과 시에만 교체), 보통 10~20분
 python3 tools/publish_daily.py                   # data/archive/<date>.json/.js + index + report.js + feed.xml
-git add -A data feed.xml && git commit -m "Daily brief $(TZ=Asia/Seoul date +%F)" && git push
+git add -A data feed.xml index.html && git commit -m "Daily brief $(TZ=Asia/Seoul date +%F)" && git push
 ```
 - 확인: https://trade-brief-kr.github.io/hu-eu-brief/data/report.json 의 date가 오늘인지 (Pages 반영 1~2분).
 
@@ -20,7 +20,7 @@ cd /workspace/hu-eu-brief && git pull --ff-only
 bash tools/run_codex_research.sh --weekly        # 기본: 지난주 월요일 시작. 결과: data/weekly.json, 보통 15~30분
 #   특정 주: bash tools/run_codex_research.sh --weekly --week-start 2026-11-02
 python3 tools/publish_weekly.py                  # data/weekly/<weekStart>.json/.js + index + weekly.js + feed.xml
-git add -A data feed.xml && git commit -m "Weekly brief $(python3 -c "import json;print(json.load(open('data/weekly.json'))['weekStart'])")" && git push
+git add -A data feed.xml index.html && git commit -m "Weekly brief $(python3 -c "import json;print(json.load(open('data/weekly.json'))['weekStart'])")" && git push
 ```
 - 확인: https://trade-brief-kr.github.io/hu-eu-brief/data/weekly.json 의 weekStart가 지난주 월요일인지.
 - 일일과 주간 러너는 모드별 잠금이라 동시에 돌릴 수 있다(같은 모드 중복 실행만 막음).
