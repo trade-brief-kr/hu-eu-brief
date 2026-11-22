@@ -1,0 +1,252 @@
+window.REPORT_ARCHIVE = window.REPORT_ARCHIVE || {};
+window.REPORT_ARCHIVE["2026-11-23"] = {
+  "date": "2026-11-23",
+  "generatedAt": "2026-11-23T08:48:22+09:00",
+  "coverage": "최근 24시간 발표 중심",
+  "sections": [
+    {
+      "id": "hu_politics",
+      "title": "정치 및 정부",
+      "items": [
+        {
+          "date": "2026-11-22",
+          "tag": "",
+          "korea": false,
+          "title": "헝가리 기민당 대표, 당권 이양 예고",
+          "bullets": [
+            {
+              "text": "셈옌 졸트 대표가 23년 만에 물러날 뜻을 밝히고 레트바리 벤체 원내대표를 후임 후보로 거론.",
+              "source": "Telex",
+              "url": "https://telex.hu/belfold/2026/11/22/semjen-zsolt-bayer-show-kdnp-elnokseg-atadasa",
+              "date": "2026-11-22"
+            }
+          ],
+          "sources": [
+            {
+              "source": "Hír TV",
+              "url": "https://hirtv.origo.hu/ahirtvhirei/2026/11/semjen-elmondja-miert-all-felre-bayer-show",
+              "date": "2026-11-22"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-22",
+          "tag": "",
+          "korea": false,
+          "title": "헝가리, 1,200억 포린트 도로 보수 계획",
+          "bullets": [
+            {
+              "text": "머저르 페테르 총리가 지방도로 보수와 국영 도로공사 역량 확충을 위한 1,200억 포린트 사업 발표.",
+              "source": "24.hu",
+              "url": "https://24.hu/belfold/2026/11/22/magyar-peter-defekt-katyumentesito-program-gumicsere/",
+              "date": "2026-11-22"
+            }
+          ],
+          "sources": [
+            {
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261122/120-milliard-forintos-katyumentesito-programot-indit-a-kormany-878302",
+              "date": "2026-11-22"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-22",
+          "tag": "",
+          "korea": false,
+          "title": "헝가리 티서로프 저류지, 용수 공급 개시",
+          "bullets": [
+            {
+              "text": "헝가리 환경부 장관이 가뭄 대응을 위한 티서로프 저류지의 수문 개방과 용수 공급 개시 발표.",
+              "source": "Telex",
+              "url": "https://telex.hu/techtud/2026/11/22/gajdos-laszlo-tiszaroffi-tarozo-vizpotlas-vizmegtartas",
+              "date": "2026-11-22"
+            },
+            {
+              "text": "이번 겨울 농지 120헥타르에 티서강 물 250만㎥를 공급할 계획.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/percrol-percre/878266/ujabb-bejelentes-gajdos-laszlotol-1067392",
+              "date": "2026-11-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hu_economy",
+      "title": "경제 및 산업",
+      "items": [
+        {
+          "date": "2026-11-20",
+          "tag": "[자동차]",
+          "korea": false,
+          "title": "네덜란드 법원, BYD Ti7 역내 생산 금지",
+          "bullets": [
+            {
+              "text": "헤이그 법원이 랜드로버 디자인권 침해를 이유로 BYD Ti7의 EU 내 생산·판매를 금지하는 가처분 결정.",
+              "source": "The Guardian",
+              "url": "https://www.theguardian.com/business/2026/nov/22/court-bans-china-byd-selling-defender-clone-suv-in-eu",
+              "date": "2026-11-22"
+            },
+            {
+              "text": "금지 대상에 헝가리 세게드 공장의 해당 모델 생산이 포함되며, BYD는 항소 방침 표명."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-20",
+          "tag": "",
+          "korea": false,
+          "title": "무디스, 헝가리 신용등급 전망 상향",
+          "bullets": [
+            {
+              "text": "무디스가 헝가리 국가신용등급을 Baa2로 유지하고 전망을 ‘부정적’에서 ‘안정적’으로 상향.",
+              "source": "Világgazdaság",
+              "url": "https://www.vg.hu/vilaggazdasag-magyar-gazdasag/2026/11/moodys-hitelminosito-magyar-allamadossag-besorolas",
+              "date": "2026-11-20"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-21",
+          "tag": "[에너지]",
+          "korea": false,
+          "title": "팍스 II 6호기 지반보강 부분사용 승인",
+          "bullets": [
+            {
+              "text": "헝가리 원자력청이 팍스 II 원전 6호기 원자로 구역의 지반보강 공사에 부분사용 승인 발급.",
+              "source": "Világgazdaság",
+              "url": "https://www.vg.hu/vilaggazdasag-magyar-gazdasag/2026/11/paks-ii-paksi-atomeromu-uzemido-atvilagitas",
+              "date": "2026-11-21"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-22",
+          "tag": "[EU–헝가리]",
+          "korea": false,
+          "title": "헝가리, EU 기금 30억 유로 활용안",
+          "bullets": [
+            {
+              "text": "경제·에너지부 장관이 EU 회복기금 30억 유로 이상을 전력망 확충과 기업 지원 등에 투입할 계획 발표.",
+              "source": "Economx",
+              "url": "https://www.economx.hu/belfold/2026/11/22/kapitany-istvan-kkv-unios-forras-magyar-fejlesztesi-bank/",
+              "date": "2026-11-22"
+            },
+            {
+              "text": "전력망 확충과 스마트계량기 사업에 15억 유로를 배정하고, 자금은 12월 유입 전망."
+            }
+          ],
+          "sources": [
+            {
+              "source": "Infostart",
+              "url": "https://infostart.hu/gazdasag/2026/11/22/decemberben-jonnek-az-euromilliardok",
+              "date": "2026-11-22"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-22",
+          "tag": "",
+          "korea": false,
+          "title": "허트번–퓌제셔보니 철도 개량 준비 착수",
+          "bullets": [
+            {
+              "text": "교통·투자부 장관이 시속 160㎞ 운행을 목표로 허트번–퓌제셔보니 철도 개량 준비 착수 발표.",
+              "source": "24.hu",
+              "url": "https://24.hu/belfold/2026/11/22/vitezy-david-ujjaepul-hatvan-es-fuzesabony-kozotti-vasutvonal/",
+              "date": "2026-11-22"
+            },
+            {
+              "text": "바로시 가보르 철도개발계획에 따라 2027년 초 공사 입찰 개시 전망."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu_policy",
+      "title": "EU 경제통상 이슈",
+      "items": [
+        {
+          "date": "2026-11-20",
+          "tag": "[CBAM]",
+          "korea": false,
+          "title": "EU·영국, 배출권거래제 연계 협상 타결",
+          "bullets": [
+            {
+              "text": "EU와 영국이 배출권거래제 연계 협상을 마치고 2028년 적용 목표를 공동 발표.",
+              "source": "유럽이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/20/joint-statement-eu-united-kingdom-summit-20-november-2026/",
+              "date": "2026-11-20"
+            },
+            {
+              "text": "양측 법령과 절차에 따라 상대국 상품의 탄소국경조정제도(CBAM) 상호 면제 추진."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-20",
+          "tag": "[한–EU]",
+          "korea": true,
+          "title": "브뤼셀 한·EU 포럼, 통상규제 대응 논의",
+          "bullets": [
+            {
+              "text": "한국무역협회가 브뤼셀 포럼에서 탄소국경조정제도와 산업가속화법의 기업 영향을 논의했다고 발표.",
+              "source": "머니투데이",
+              "url": "https://www.mt.co.kr/industry/2026/11/20/2026112008421982100",
+              "date": "2026-11-20"
+            },
+            {
+              "text": "19일 열린 포럼에서 현지 진출 한국 기업과 EU 정책당국 등이 투자·기술·공급망 협력 방안을 논의."
+            }
+          ]
+        },
+        {
+          "date": "2026-11-22",
+          "tag": "[기후]",
+          "korea": false,
+          "title": "EU, COP31 기후합의 초안 거부",
+          "bullets": [
+            {
+              "text": "화석연료 사용을 줄이겠다는 기존 약속이 약해진 초안에 EU 등이 반대하면서 COP31 핵심 합의 불발.",
+              "source": "Bloomberg Law",
+              "url": "https://news.bloomberglaw.com/health-law-and-business/eu-rejected-un-climate-deal-due-to-backsliding-on-fossil-fuels",
+              "date": "2026-11-22"
+            }
+          ],
+          "sources": [
+            {
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/gazdasag/20261122/totalis-kudarcba-fulladt-a-klimacsucs-melysegesen-csalodott-az-ensz-fotitkara-878336",
+              "date": "2026-11-22"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-22",
+          "tag": "",
+          "korea": false,
+          "title": "체코 총리, EU 장기예산안 반대",
+          "bullets": [
+            {
+              "text": "안드레이 바비시 체코 총리가 자국 배정액 축소와 우크라이나 지원 예산 편입을 이유로 반대 표명.",
+              "source": "ČTK",
+              "url": "https://www.ceskenoviny.cz/zpravy/navrh-rozpoctu-eu-je-podle-babise-pro-cesko-absolutne-neprijatelny/2905029",
+              "date": "2026-11-22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eu_stats",
+      "title": "EU 통계발표",
+      "items": []
+    }
+  ],
+  "notes": [
+    "EU 통계발표: 수집 구간 내 게시 시각까지 검증 가능한 공식 통계 발표를 시간 내 확인 못함.",
+    "헝가리 내 한국 기업의 신규 동향은 수집 구간 내 미확인."
+  ]
+};
