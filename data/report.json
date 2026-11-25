@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-25",
-  "generatedAt": "2026-11-25T08:52:28+09:00",
+  "date": "2026-11-26",
+  "generatedAt": "2026-11-26T08:49:32+09:00",
   "coverage": "최근 24시간 발표 중심",
   "sections": [
     {
@@ -8,51 +8,78 @@
       "title": "정치 및 정부",
       "items": [
         {
-          "date": "2026-11-24",
-          "tag": "",
-          "korea": false,
-          "title": "헝가리, 취학·교과서 선택권 확대 법안 제출",
+          "date": "2026-11-25",
+          "tag": "[한국기업]",
+          "korea": true,
+          "title": "헝가리 의회, 환경감독청 신설 법안 논의",
           "bullets": [
             {
-              "text": "헝가리 정부, 보호자와 유치원장이 취학을 공동 결정하고 교과서 선택 폭을 넓히는 법안 제출.",
-              "source": "Telex",
-              "url": "https://telex.hu/belfold/2026/11/24/egeszsegugy-oktatas-gazdasag-torvenyjavaslatok",
-              "date": "2026-11-24"
+              "text": "헝가리 의회, 전국 환경감독청 신설에 필요한 법률 개정안을 25일 본회의 일반토론 안건으로 상정.",
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/percrol-percre/878890/koltsegvetesi-vitaval-folytatodik-a-parlamenti-het-1067848",
+              "date": "2026-11-25"
+            },
+            {
+              "text": "신설 기관에 배터리산업 전담 부서를 두고 괴드·이반차 등 배터리 공장의 인허가·환경 감독을 강화할 계획.",
+              "source": "Hírklikk",
+              "url": "https://hirklikk.hu/kozelet/celkeresztben-az-akkugyartas/460007/",
+              "date": "2026-11-25"
             }
           ]
         },
         {
-          "date": "2026-11-24",
+          "date": "2026-11-25",
           "tag": "",
           "korea": false,
-          "title": "헝가리 의회, 전 중앙은행 총재 청문 방식 검토",
+          "title": "헝가리 정부, 의회 임시회의 소집 요청",
           "bullets": [
             {
-              "text": "의회 조사위, 중앙은행 운영 의혹과 관련해 전 총재의 대면·원격 청문 가능 여부를 확인하기로 의결.",
-              "source": "Telex",
-              "url": "https://telex.hu/gazdasag/2026/11/24/mnb-ugyet-vizsgalo-bizottsag-tiszas-elnoke-ha-matolcsy-gyorgy-nem-hajlando-eljonni-hozzank-akkor-mi-megyunk-el-hozza",
-              "date": "2026-11-24"
-            }
-          ]
-        },
-        {
-          "date": "2026-11-24",
-          "tag": "",
-          "korea": false,
-          "title": "헝가리 의회, 신규 노령연금 최저액 인상 의결",
-          "bullets": [
-            {
-              "text": "2027년 1월부터 새로 산정하는 완전노령연금 최저액을 월 2만8500포린트에서 12만 포린트로 인상.",
-              "source": "Telex",
-              "url": "https://telex.hu/gazdasag/2026/11/24/orszaggyules-nyugdijszabalyok-modositasa-emeles",
-              "date": "2026-11-24"
+              "text": "정부, 지속가능금융·기업의 사회적 책임과 도산 절차 등 법안 8건 논의를 위해 12월 1~2일 임시회의 소집 요청.",
+              "source": "444",
+              "url": "https://444.hu/2026/11/25/a-maratoni-parlamenti-het-utan-sem-lassit-a-kormany-ujabb-ket-napra-hivnak-ossze-az-orszaggyulest",
+              "date": "2026-11-25"
             }
           ],
           "sources": [
             {
-              "source": "Magyar Nemzet",
-              "url": "https://magyarnemzet.hu/gazdasag/2026/11/hozzafogott-a-tisza-az-adorendszer-felforgatasahoz-beindult-a-torvenygyar",
-              "date": "2026-11-24"
+              "source": "Economx",
+              "url": "https://www.economx.hu/belfold/2026/11/25/ruff-balint-orszaggyules-rendkivuli-ules/",
+              "date": "2026-11-25"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-25",
+          "tag": "",
+          "korea": false,
+          "title": "우크라이나, 헝가리계 언어권 보장 이행 가속",
+          "bullets": [
+            {
+              "text": "우크라이나 외무장관, 카르파티아 헝가리계 주민의 언어·문화·교육권 보장 합의 이행을 앞당기겠다는 방침 표명.",
+              "source": "Telex",
+              "url": "https://telex.hu/kulfold/2026/11/25/andrij-szibiha-magyar-peter-karpataljai-magyarsag-ukrajna-nyelvtorveny-felgyorsitas",
+              "date": "2026-11-25"
+            }
+          ],
+          "sources": [
+            {
+              "source": "Portfolio",
+              "url": "https://www.portfolio.hu/global/20261125/ukrajna-teljesiti-magyar-peter-kereset-879114",
+              "date": "2026-11-25"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-25",
+          "tag": "",
+          "korea": false,
+          "title": "헝가리 의회, 광업부담금 환급 예산안 논의",
+          "bullets": [
+            {
+              "text": "EU 사법재판소 판결에 따른 추가 광업부담금과 이자 환급분 1,173억 포린트를 반영한 2026년 예산 변경안 논의.",
+              "source": "Világgazdaság",
+              "url": "https://www.vg.hu/vilaggazdasag-magyar-gazdasag/2026/11/banyajaradek-visszafizetese-orszaggyules-koltsegvetes",
+              "date": "2026-11-25"
             }
           ]
         }
@@ -64,92 +91,74 @@
       "items": [
         {
           "date": "2026-11-24",
-          "tag": "[세제]",
-          "korea": false,
-          "title": "헝가리 의회, 대기업 법인세 15% 의결",
+          "tag": "[한국기업]",
+          "korea": true,
+          "title": "에코프로비엠, 데브레첸 공장 연기 발생 공개",
           "bullets": [
             {
-              "text": "2027년 1월부터 과세연도 2년 전 연매출이 5억 유로 이상인 대기업의 법인세율을 9%에서 15%로 인상.",
-              "source": "Portfolio",
-              "url": "https://www.portfolio.hu/gazdasag/20261124/itt-a-dontes-emelkedik-a-nagyvallalatok-tarsasagi-adoja-atalakitjak-a-kedvezmenyeket-878648",
+              "text": "에코프로비엠, 데브레첸 공장 소성설비 정비 중 16일 연기가 발생해 직원이 소화기로 대응했다고 설명.",
+              "source": "Debreciner",
+              "url": "https://debreciner.hu/cikk/csak-a-debreciner-kerdeseinek-hatasara-adott-ki-kozlemenyt-az-ecopro-a-balesetrol",
               "date": "2026-11-24"
-            }
-          ],
-          "sources": [
+            },
             {
-              "source": "Magyar Nemzet",
-              "url": "https://magyarnemzet.hu/gazdasag/2026/11/hozzafogott-a-tisza-az-adorendszer-felforgatasahoz-beindult-a-torvenygyar",
-              "date": "2026-11-24"
+              "text": "현지 재난당국은 신고를 받았고 공장 자체 소방대가 상황을 처리했다고 설명."
             }
           ]
         },
         {
-          "date": "2026-11-24",
-          "tag": "[세제]",
-          "korea": false,
-          "title": "헝가리 의회, 고액 순자산 과세안 가결",
-          "bullets": [
-            {
-              "text": "헝가리 의회, 부채를 뺀 순자산 중 10억 포린트 초과분에 1~1.5%를 부과하는 법안 가결.",
-              "source": "Telex",
-              "url": "https://telex.hu/gazdasag/2026/11/24/vagyonado-elfogadtak-modositasok",
-              "date": "2026-11-24"
-            }
-          ],
-          "sources": [
-            {
-              "source": "Magyar Nemzet",
-              "url": "https://magyarnemzet.hu/gazdasag/2026/11/hozzafogott-a-tisza-az-adorendszer-felforgatasahoz-beindult-a-torvenygyar",
-              "date": "2026-11-24"
-            }
-          ]
-        },
-        {
-          "date": "2026-11-24",
-          "tag": "[유통]",
-          "korea": false,
-          "title": "헝가리 의회, 소매 마진 상한제 폐지 의결",
-          "bullets": [
-            {
-              "source": "Telex",
-              "url": "https://telex.hu/gazdasag/2026/11/24/orszagos-kereskedelmi-szovetseg-reakcio-arresstop-kivezetes-parlament-szavazas",
-              "text": "헝가리 의회가 식품·생활용품 소매 마진 상한제 폐지를 의결하자 소매업협회는 환영 입장 표명.",
-              "date": "2026-11-24"
-            }
-          ]
-        },
-        {
-          "date": "2026-11-24",
-          "tag": "[세제]",
-          "korea": false,
-          "title": "헝가리 의회, 개인사업자 간이과세 확대 의결",
-          "bullets": [
-            {
-              "text": "개인사업자 간이과세(KATA) 연매출 한도를 1800만 포린트에서 2200만 포린트로 상향.",
-              "source": "Telex",
-              "url": "https://telex.hu/gazdasag/2026/11/24/kata-adozas-kisadozok-kisvallalkozok-orszaggyules",
-              "date": "2026-11-24"
-            }
-          ],
-          "sources": [
-            {
-              "source": "Magyar Nemzet",
-              "url": "https://magyarnemzet.hu/gazdasag/2026/11/hozzafogott-a-tisza-az-adorendszer-felforgatasahoz-beindult-a-torvenygyar",
-              "date": "2026-11-24"
-            }
-          ]
-        },
-        {
-          "date": "2026-11-24",
+          "date": "2026-11-25",
           "tag": "[에너지]",
           "korea": false,
-          "title": "헝가리 중부 가스 탐사 지진파 측정 중단",
+          "title": "헝가리 가스 비축률 74%",
           "bullets": [
             {
-              "text": "캔캠브리아 헝가리, 호모크하트샤그 일대 가스 탐사 지진파 측정 즉시 중단 및 독립 조사 제안.",
-              "source": "Portfolio",
-              "url": "https://www.portfolio.hu/gazdasag/20261124/akkora-volt-a-felhaborodas-egy-magyar-telepulesen-hogy-visszavonulot-fujt-a-kanadai-ceg-878628",
-              "date": "2026-11-24"
+              "text": "경제에너지부 장관, 국내 가스저장시설 충전율 74%와 겨울철 전국 소비량 기준 95일분의 비축량 발표.",
+              "source": "24.hu",
+              "url": "https://24.hu/fn/gazdasag/2026/11/25/kapitany-istvan-gaztartalek-teli-energiaellatas/",
+              "date": "2026-11-25"
+            }
+          ],
+          "sources": [
+            {
+              "source": "Világgazdaság",
+              "url": "https://www.vg.hu/vilaggazdasag-magyar-gazdasag/2026/11/kapitany-istvan-magyar-gazkeszletek-tartalek-tel",
+              "date": "2026-11-25"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-25",
+          "tag": "",
+          "korea": false,
+          "title": "헝가리 포린트 약세, 유로당 373포린트대",
+          "bullets": [
+            {
+              "text": "전날 유로당 369.68포린트에 마감한 포린트화, 25일 오전 유로당 373포린트 이상으로 약세.",
+              "source": "Telex",
+              "url": "https://telex.hu/gazdasag/2026/11/25/euro-forint-arfolyam-gyengul-miert",
+              "date": "2026-11-25"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-25",
+          "tag": "",
+          "korea": false,
+          "title": "서트마리 통조림 공장 회생절차 개시",
+          "bullets": [
+            {
+              "text": "법원, 직원 약 350명이 근무하는 서트마리 통조림 제조사의 회생절차 개시 신청 승인.",
+              "source": "24.hu",
+              "url": "https://24.hu/fn/gazdasag/2026/11/25/csodvedelem-szabolcsi-konzervgyar-mfb-allami-hitel-24extra/",
+              "date": "2026-11-25"
+            }
+          ],
+          "sources": [
+            {
+              "source": "Telex",
+              "url": "https://telex.hu/gazdasag/2026/11/25/tyukod-szatmari-konzervgyar-csodvedelem-tobb-milliard-forint-allami-tamogatas",
+              "date": "2026-11-25"
             }
           ]
         }
@@ -160,50 +169,61 @@
       "title": "EU 경제통상 이슈",
       "items": [
         {
-          "date": "2026-11-23",
-          "tag": "[기후]",
+          "date": "2026-11-25",
+          "tag": "[예산]",
           "korea": false,
-          "title": "비셰그라드 4국, ETS2 첫 경매 연기 요구",
+          "title": "유럽의회, 2027년 EU 예산 최종 확정",
           "bullets": [
             {
-              "text": "헝가리 등 4국, 건물·도로수송 배출권거래제(ETS2)의 2027년 1월 첫 경매 연기를 집행위에 요구.",
-              "source": "Euronews",
-              "url": "https://www.euronews.com/2026/11/24/visegrad-leaders-demand-delay-to-ets2-piling-pressure-on-eus-carbon-market",
-              "date": "2026-11-24"
+              "text": "유럽의회 의결과 의장 서명으로 2027년 EU 예산 약정액 1,997억 유로, 지급액 2,115억 유로 확정.",
+              "source": "Cyprus News Agency",
+              "url": "https://www.cna.org.cy/en/press_releases/article/11254241/press-release-european-parliament",
+              "date": "2026-11-25"
+            },
+            {
+              "text": "연구·에너지·교통망·교육·재난 대응 등을 위해 집행위 초안보다 3억 유로 추가 배정."
             }
           ]
         },
         {
-          "date": "2026-11-24",
-          "tag": "[무역구제]",
-          "korea": true,
-          "title": "EU, 하이브리드차 잠정 수입쿼터 공표",
+          "date": "2026-11-25",
+          "tag": "[국가보조금]",
+          "korea": false,
+          "title": "EU, 중동 위기 대응 보조금 제도 연장",
           "bullets": [
             {
-              "text": "EU, 일부 신형 하이브리드 승용차에 12월 1일부터 200일간 수입쿼터를 적용하는 규정 관보 게재.",
-              "source": "2EU Brussels",
-              "url": "https://2eu.brussels/en/news/eu-introduces-import-quotas-for-new-hybrid-cars-from-1-december-with-a-separate-cap-for-china",
-              "date": "2026-11-24"
-            },
-            {
-              "text": "한국산 배정량은 전체 6만7924대이며 12월 1일부터 내년 2월 28일까지 3만566대 배정."
+              "text": "EU 집행위, 농어업·운송 등의 연료비 부담 완화를 위한 한시적 국가보조금 제도를 2027년 6월 말까지 연장.",
+              "source": "Cyprus News Agency",
+              "url": "https://www.cna.org.cy/en/press_releases/article/11254745/press-release-european-commission",
+              "date": "2026-11-25"
             }
           ]
         },
         {
-          "date": "2026-11-24",
-          "tag": "[재정]",
+          "date": "2026-11-25",
+          "tag": "[경쟁정책]",
           "korea": false,
-          "title": "EU 집행위, 2027년 경제정책 조정안 발표",
+          "title": "EU, 향료 3사 담합에 4억7,190만 유로 과징금",
           "bullets": [
             {
-              "text": "EU 집행위, 2027년 유럽학기 가을 패키지에서 유로지역 17개국 예산안 평가와 정책 권고안 공개.",
-              "source": "EU 집행위 핀란드 대표부",
-              "url": "https://www.sttinfo.fi/tiedote/72533381/talouspolitiikan-eu-ohjausjakson-syyspaketissa-esitetaan-eun-keskeiset-painopisteet-vuodelle-2027?lang=fi&publisherId=66001268",
-              "date": "2026-11-24"
-            },
+              "text": "EU 집행위, 유니레버와의 거래에서 가격 등 민감정보를 교환한 피르메니히·지보단·IFF에 과징금 부과.",
+              "source": "AFP",
+              "url": "https://www.afp.com/en/eu-uk-fine-fragrance-firms-over-570-mn-euros-international-cartel",
+              "date": "2026-11-25"
+            }
+          ]
+        },
+        {
+          "date": "2026-11-25",
+          "tag": "",
+          "korea": false,
+          "title": "EU·서부 발칸 정상회의, 단일시장 통합 재확인",
+          "bullets": [
             {
-              "text": "17개국 가운데 8개국의 예산안이 권고된 순지출 증가율 한도를 준수할 것으로 평가."
+              "text": "브뤼셀 선언, 서부 발칸 개혁·투자에 최대 60억 유로를 지원하는 성장계획과 EU 단일시장 단계적 통합 재확인.",
+              "source": "유럽이사회",
+              "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/11/25/brussels-declaration-25-november-2026/",
+              "date": "2026-11-25"
             }
           ]
         }
@@ -214,15 +234,43 @@
       "title": "EU 통계발표",
       "items": [
         {
-          "date": "2026-11-24",
-          "tag": "[ECB]",
-          "title": "유로 단기금리 11월 23일 2.443%",
+          "date": "2026-11-25",
+          "tag": "[Eurostat]",
+          "title": "EU 3분기 상품교역 수지",
           "bullets": [
             {
-              "text": "11월 23일 유로 단기금리(€STR) 2.443%, 직전 거래일인 11월 20일 2.444% 대비 0.001%p 하락.",
+              "text": "EU 역외 상품교역 360억 유로 적자로 전분기와 비슷한 수준, 수출 1.8%·수입 1.7% 증가.",
+              "source": "Eurostat",
+              "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20261125-1",
+              "date": "2026-11-25"
+            }
+          ],
+          "korea": false
+        },
+        {
+          "date": "2026-11-25",
+          "tag": "[ECB]",
+          "title": "유로지역 2026년 소비자 결제수단 조사",
+          "bullets": [
+            {
+              "text": "매장 결제 비중은 실물카드 45%, 현금 44%, 모바일 9%로, 모바일은 2024년(6%) 대비 상승.",
+              "source": "ECB",
+              "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr261125~26d1ade228.en.html",
+              "date": "2026-11-25"
+            }
+          ],
+          "korea": false
+        },
+        {
+          "date": "2026-11-25",
+          "tag": "[ECB]",
+          "title": "유로 단기금리 11월 24일 2.444%",
+          "bullets": [
+            {
+              "text": "24일 거래 기준 유로 단기금리 2.444%로 전 거래일(2.443%) 대비 0.001%포인트 상승.",
               "source": "ECB",
               "url": "https://www.ecb.europa.eu/stats/financial_markets_and_interest_rates/euro_short-term_rate/html/index.en.html",
-              "date": "2026-11-24"
+              "date": "2026-11-25"
             }
           ],
           "korea": false
@@ -231,8 +279,7 @@
     }
   ],
   "notes": [
-    "Eurostat 11월 24일 가계 투자율·비금융기업 이익 비중 발표의 게시 시각 미확인.",
-    "삼성SDI 헝가리 기술 포럼 공지의 게시 시각 미확인.",
-    "헝가리 법치주의에 관한 유럽의회 본회의 토론 일부 보도 원문 접속 오류."
+    "EU 예산·중동 위기 보조금 공식 원문의 게시 시각은 미확인으로, 키프로스 통신의 보도자료 재게재 시각 사용.",
+    "삼성SDI 괴드 공장 방음벽 완공 보도와 에코프로비엠 공장 관련 주민단체 대응 보도는 게시 시각 미확인."
   ]
 }
