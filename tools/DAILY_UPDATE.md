@@ -1,7 +1,7 @@
 # 일일·주간 업데이트 절차 (헝가리·EU 경제통상 브리프)
 
 독자는 일반 한국인(기업인, 공관·기관 관계자 등). 일일·주간 모두 4개 섹션, headline·오늘 확인할 것 없음.
-**에이전트는 직접 웹 조사하지 않는다.** 조사는 ChatGPT 구독 기반 Codex CLI(`codex --search exec`, reasoning high)가 하고,
+**에이전트는 직접 웹 조사하지 않는다.** 조사는 ChatGPT 구독 기반 Codex CLI(`codex --search exec`, reasoning medium)가 하고,
 에이전트는 러너 실행 → 검증 → 게시 → push → 라이브 확인만 한다. 링크 curl 재검증은 기본 OFF(Codex 검증 신뢰).
 
 ## A. 일일 (매일 오전 KST 한 번, 주말 포함 가능)
